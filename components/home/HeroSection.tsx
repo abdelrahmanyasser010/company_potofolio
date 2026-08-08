@@ -16,17 +16,17 @@ export function HeroSection() {
         <div className="max-w-3xl">
           <div className="eyebrow"><span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan"/> CODELY SOFTWARE STUDIO</div>
           <h1 className="display-title mt-6 max-w-[760px] text-white">
-            {t("نبني برمجيات تدير العمل،", "We build software that runs the work —")} <span className="codely-gradient-text">{t("وتكبر معك.", "and grows with you.")}</span>
+            {t("نصمّم ونطوّر أنظمة برمجة حقيقية", "We build software that runs the work —")} <span className="codely-gradient-text">{t("تنمّي أعمالك وتتوسع معك.", "and grows with you.")}</span>
           </h1>
-          <p className="mt-7 max-w-[680px] text-[15px] leading-8 text-slate-400 md:text-[17px]">{t("فريق تطوير متكامل لمنتجات الويب والموبايل، أنظمة POS وERP، لوحات التشغيل والـ APIs. خبراتنا ممتدة عبر أسواق مصر والسعودية وعُمان والأردن، ونبني حول احتياج العمل الحقيقي لا حول قالب جاهز.", "A complete software team for web and mobile products, POS and ERP systems, operational dashboards and APIs. Our experience spans Egypt, Saudi Arabia, Oman and Jordan — building around real business needs, not templates.")}</p>
+          <p className="mt-7 max-w-[680px] text-[15px] leading-8 text-slate-300 md:text-[17px]">{t("فريق هندسي متخصص في بناء منصات الويب، تطبيقات الموبايل، أنظمة POS وERP، ولوحات التحكم المعقدة. نفهم تفاصيل التشغيل اليومي في أسواق السعودية ومصر وعُمان والأردن، ونبني حلاً هندسياً حقيقياً يخدم عملك لا مجرد قالب جاهز.", "A complete software team for web and mobile products, POS and ERP systems, operational dashboards and APIs. Our experience spans Egypt, Saudi Arabia, Oman and Jordan — building around real business needs, not templates.")}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link href="/contact" className="button-primary">{t("احكِ لنا عن مشروعك", "Tell us about your project")}<ArrowUpRight className="h-4 w-4"/></Link>
-            <Link href="/portfolio" className="button-secondary">{t("شاهد المشاريع", "Explore our work")}</Link>
+            <Link href="/contact" className="button-primary">{t("تحدث مع فريقنا الهندسي", "Talk to our engineering team")}<ArrowUpRight className="h-4 w-4"/></Link>
+            <Link href="/portfolio" className="button-secondary">{t("استكشف أعمالنا المنفذة", "Explore our case studies")}</Link>
           </div>
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold text-slate-400">{[
-            t("خبرات مجمعة +15 سنة", "15+ years combined experience"),
-            t("تخصصات برمجية متكاملة", "Full-stack team coverage"),
-            t("تسليم قابل للتوسع", "Built for growth")
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold text-slate-300">{[
+            t("خبرة ممتدة لأكثر من 15 عاماً", "15+ years combined experience"),
+            t("فريق متكامل بدون وسطاء", "Full-stack dedicated team"),
+            t("كود نظيف وبنية قابلة للتوسع", "Built for high scalability")
           ].map(x=><span key={x} className="flex items-center gap-2"><span className="grid h-5 w-5 place-items-center rounded-full bg-cyan-300/8 text-codely-cyan"><Check className="h-3 w-3"/></span>{x}</span>)}</div>
         </div>
 
