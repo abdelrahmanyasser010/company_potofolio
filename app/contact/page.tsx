@@ -39,9 +39,9 @@ export default function ContactPage() {
     window.location.href = `mailto:${COMPANY_INFO.email}?subject=${subject}&body=${encodeURIComponent(message)}`;
   };
 
-  const submitWhatsApp = ()=>{
-    if (!COMPANY_INFO.whatsapp) return;
-    window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  const submitWhatsApp = () => {
+    const num = COMPANY_INFO.whatsapp || "201023817658";
+    window.open(`https://wa.me/${num}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   const copyEmail = async ()=>{await navigator.clipboard.writeText(COMPANY_INFO.email); setCopied(true); setTimeout(()=>setCopied(false),1600)};
@@ -58,7 +58,7 @@ export default function ContactPage() {
           <label className="form-label"><span>{t("الاسم", "Name")}</span><input required value={form.name} onChange={e=>setForm({...form,name:e.target.value})} className={field} placeholder={t("اسمك", "Your name")}/></label>
           <label className="form-label"><span>{t("الشركة / النشاط", "Company / business")}</span><input value={form.company} onChange={e=>setForm({...form,company:e.target.value})} className={field} placeholder={t("اختياري", "Optional")}/></label>
           <label className="form-label"><span>{t("البريد الإلكتروني", "Email")}</span><input required type="email" value={form.email} onChange={e=>setForm({...form,email:e.target.value})} className={field} placeholder="name@company.com" dir="ltr"/></label>
-          <label className="form-label"><span>{t("رقم الهاتف / WhatsApp", "Phone / WhatsApp")}</span><input required type="tel" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} className={field} placeholder={t("مثال: +20...", "Example: +20...")} dir="ltr"/></label>
+          <label className="form-label"><span>{t("رقم الهاتف / WhatsApp", "Phone / WhatsApp")}</span><input required type="tel" value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} className={field} placeholder={t("مثال: +20 102 381 7658", "Example: +20 102 381 7658")} dir="ltr"/></label>
         </div>
 
         <fieldset className="mt-7"><legend className="form-label mb-3">{t("نوع المشروع", "Project type")}</legend><div className="choice-grid">{projectTypes.map(([value,ar,en])=><button type="button" key={value} onClick={()=>setForm({...form,type:value})} className={`choice-button ${form.type===value?"choice-button-active":""}`}>{t(ar,en)}</button>)}</div></fieldset>

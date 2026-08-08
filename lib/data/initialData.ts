@@ -401,8 +401,6 @@ export const COMPANY_INFO = {
   name: "Codely",
   email: "agency.codely@gmail.com",
   tagline: "WE BUILD. YOU GROW.",
-  // Add the real Codely business number in Vercel Environment Variables.
-  // NEXT_PUBLIC_WHATSAPP_NUMBER format: country code + number, digits only, e.g. 2010XXXXXXXX.
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
-  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || "",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "201023817658",
+  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY || "+20 102 381 7658",
 };
