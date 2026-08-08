@@ -25,13 +25,20 @@ body {
     radial-gradient(circle at 92% 5%, rgba(174, 103, 255, 0.11), transparent 30rem),
     linear-gradient(180deg, #050817 0%, #040714 100%);
   color: var(--text);
-  font-family: "Segoe UI", "Noto Sans Arabic", Tahoma, Arial, sans-serif;
+  font-family: var(--font-ibm), "IBM Plex Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 html[dir="ltr"] body,
-.font-en { font-family: var(--font-geist), Inter, "Segoe UI", Arial, sans-serif; }
+.font-en { font-family: var(--font-inter), Inter, "Segoe UI", Arial, sans-serif; }
+
+/* Enhanced legibility for Arabic text */
+html[dir="rtl"] body {
+  letter-spacing: 0;
+  line-height: 1.68;
+}
 
 ::selection { background: rgba(46, 220, 255, .24); color: white; }
 ::-webkit-scrollbar { width: 9px; }

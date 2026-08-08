@@ -16,6 +16,11 @@ const config: Config = {
           muted: "#98A7C5",
         },
       },
+      fontFamily: {
+        sans: ["var(--font-ibm)", "var(--font-inter)", "sans-serif"],
+        cairo: ["var(--font-ibm)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
+      },
       boxShadow: {
         glow: "0 0 40px rgba(46, 220, 255, .14)",
       },

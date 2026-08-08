@@ -1,14 +1,20 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { IBM_Plex_Sans_Arabic, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/context/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
 
-const geist = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist",
+const ibmPlex = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic", "latin"],
+  variable: "--font-ibm",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -25,8 +31,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ar" dir="rtl">
-      <body className={`${geist.variable} min-h-screen bg-codely-ink text-white`}>
+    <html lang="ar" dir="rtl" className={`${ibmPlex.variable} ${inter.variable}`}>
+      <body className="min-h-screen bg-codely-ink text-white font-sans antialiased">
         <LanguageProvider>
           <Navbar />
           <main>{children}</main>
