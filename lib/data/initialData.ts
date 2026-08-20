@@ -395,6 +395,55 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     accent: "sky",
     visual: "cv",
   },
+  {
+    slug: "medskai",
+    title_ar: "MedSkAi",
+    title_en: "MedSkAi",
+    eyebrow_ar: "منصة تعليمية ومجتمع مهني للعلوم الطبية والصحية التطبيقية",
+    eyebrow_en: "Digital Learning & Career Platform for Applied Medical & Health Sciences",
+    category: "mobile",
+    summary_ar: "منصة رقمية مخصصة لطلاب وخريجي وممارسي العلوم الطبية والصحية التطبيقية في مصر والشرق الأوسط، تجمع بين الدورات التدريبية التخصصية، مجتمعات التخصص المباشرة، شهادات الكفاءة الموثقة، وفرص التوظيف والتدريب العملي.",
+    summary_en: "A digital learning and career platform built specifically for Applied Medical and Health Sciences students, graduates, and professionals in Egypt and the MENA region, integrating specialized courses, specialty communities, verified certificates, and career opportunities.",
+    challenge_ar: "تنشأ في مجال العلوم الطبية التطبيقية فجوة بين الدراسة النظرية والتطبيق الكلينيكي والميداني في المستشفيات والمعامل. ويواجه الطلاب والممارسون صعوبة في الوصول لمحتوى عملي متخصص، الحصول على شهادات مرتبطة بتقييمات حقيقية، وبناء ملف شخصي يبرز كفاءاتهم لدى المؤسسات الطبية وسوق العمل.",
+    challenge_en: "Applied medical and health science professionals face a gap between academic theory and practical clinical/laboratory practice. Students and practitioners struggle to find structured continuing education, earn performance-tied certificates, and showcase verified skills to healthcare employers.",
+    solution_ar: "تم تطوير تطبيق MedSkAi لتوفير بيئة تعليمية هاتفية متكاملة تشمل دورات تخصصية يقدمها خبراء وممارسون في 12+ تخصصاً طبياً (مثل الأشعة، التخدير والرعاية المركزة، المختبرات، الأجهزة الطبية)، مع تقييمات واختبارات قياس الكفاءة، وشهادات موثقة، ومجتمعات لمناقشة الحالات الكلينيكية، ومحرك وظائف وتدريب يعتمد عليه أكثر من 1,200 طالب وخريج عبر 17+ جامعة.",
+    solution_en: "MedSkAi was developed to deliver a mobile-first learning experience featuring expert-led courses across 12+ medical specialties (Radiology, Respiratory Care, ICU & Anesthesia, Medical Labs, Biomedical Engineering, etc.), competency-based assessment, verified certificates, specialty discussion groups, and a career profile builder trusted by 1,200+ students and graduates across 17+ universities.",
+    highlights_ar: [
+      "دورات تدريبية عملية في 12+ تخصصاً طبياً وصحياً تطبيقياً",
+      "نظام اختبارات وتدريبات عملية مرتبطة بالشهادات الموثقة",
+      "مجتمعات تخصصية لمناقشة الحالات الكلينيكية وتبادل الخبرات",
+      "بناء ملف شخصي وسيرة ذاتية موثقة للممارسين والطلاب",
+      "ربط الخريجين بفرص التوظيف والتدريب والورش العمل (MedSkAi Careers)",
+      "مدونة طبية متجددة لمتابعة أحدث التقنيات والتطورات الطبية",
+      "دعم تحميل الدروس والتعلم بدون إنترنت (Offline Access)",
+      "تجربة تطبيق موبايل متجاوبة وسلسة للأندرويد والأيفون"
+    ],
+    highlights_en: [
+      "Expert-led practical courses across 12+ medical specialties",
+      "Competency-based quizzes and performance-verified certificates",
+      "Specialty-focused discussion communities for clinical cases",
+      "Professional CV and career profile builder for medical pros",
+      "Career bridge linking graduates to jobs, internships and workshops",
+      "Medical articles and blogs on emerging healthcare technologies",
+      "Offline lesson downloading for continuous learning",
+      "Native mobile user experience optimized for iOS & Android"
+    ],
+    technologies: ["Flutter", "REST APIs", "Firebase", "State Management", "PDF Certificates", "Media Streaming"],
+    accent: "indigo",
+    visual: "education",
+    coverImage: "/projects/medskai/cover.webp",
+    website: "https://play.google.com/store/apps/details?id=soft.tadrees.ahmed_alazhry",
+    galleryTitle_ar: "واجهات تطبيق MedSkAi وتجربة التعلم والتشغيل",
+    galleryTitle_en: "MedSkAi App Screens & User Workflow",
+    galleryIntro_ar: "لقطات حقيقية من داخل التطبيق تظهر الشاشة الرئيسية وتصنيفات التخصصات الطبية، تصفح الدورات والأسعار، متابعة الكورسات المسجلة والإنجاز، الملف الشخصي وإدارة الإعدادات والشهادات.",
+    galleryIntro_en: "Real application screens highlighting medical specialty discovery, course catalog and pricing, learning progress tracking, and professional profile management.",
+    gallery: [
+      { src: "/projects/medskai/home.webp", title_ar: "الرئيسية واكتشاف التخصصات", title_en: "Home & Specialty Discovery", caption_ar: "الشاشة الرئيسية للتطبيق تتيح اكتشاف التخصصات الطبية المختلفة مثل الأشعة، الصحة العامة، والمهارات الطبية، بالإضافة للدورات الأكثر إقبالاً.", caption_en: "Main home screen featuring medical specialty discovery including Radiology, Public Health, and Soft Skills alongside popular courses." },
+      { src: "/projects/medskai/courses.webp", title_ar: "كتالوج الدورات والتفاصيل", title_en: "Course Catalog & Details", caption_ar: "استعراض الدورات المتاحة مع الفلاتر، التخصصات، المحاضرين، التسعير وإمكانية البدء المباشر في الدورة.", caption_en: "Browse available courses with filters, specialties, instructors, pricing and instant enrollment." },
+      { src: "/projects/medskai/my-course.webp", title_ar: "متابعة التعلم والدورات المسجلة", title_en: "My Courses & Progress", caption_ar: "متابعة نسبة إنجاز الدورات المسجلة، حالة التقدم، الدروس المكتملة ومدة الاشتراك.", caption_en: "Track enrollment progress, course completion percentages, and subscription validity." },
+      { src: "/projects/medskai/profile.webp", title_ar: "الملف الشخصي والإعدادات", title_en: "Profile & Achievements", caption_ar: "إدارة الملف الشخصي، الوصول إلى الشهادات المكتسبة، المشتريات، المجموعات التخصصية والدروس المحملة.", caption_en: "Manage profile settings, access earned certificates, order history, specialty groups, and downloaded lessons." }
+    ],
+  },
 ];
 
 export const COMPANY_INFO = {

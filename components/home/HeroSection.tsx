@@ -20,7 +20,7 @@ export function HeroSection() {
           </h1>
           <p className="mt-7 max-w-[680px] text-[15px] leading-8 text-slate-300 md:text-[17px]">{t("فريق هندسي متخصص في بناء منصات الويب، تطبيقات الموبايل، أنظمة POS وERP، ولوحات التحكم المعقدة. نفهم تفاصيل التشغيل اليومي في أسواق السعودية ومصر وعُمان والأردن، ونبني حلاً هندسياً حقيقياً يخدم عملك لا مجرد قالب جاهز.", "A complete software team for web and mobile products, POS and ERP systems, operational dashboards and APIs. Our experience spans Egypt, Saudi Arabia, Oman and Jordan — building around real business needs, not templates.")}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link href="/contact" className="button-primary">{t("تحدث مع فريقنا الهندسي", "Talk to our engineering team")}<ArrowUpRight className="h-4 w-4"/></Link>
+            <Link href="/contact" className="button-primary">{t("احكِ لنا عن مشروعك", "Tell us about your project")}<ArrowUpRight className="h-4 w-4"/></Link>
             <Link href="/portfolio" className="button-secondary">{t("استكشف أعمالنا المنفذة", "Explore our case studies")}</Link>
           </div>
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-xs font-bold text-slate-300">{[
