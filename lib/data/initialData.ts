@@ -356,6 +356,7 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     technologies: ["Laravel", "MySQL", "Sanctum", "REST APIs"],
     accent: "blue",
     visual: "education",
+    website: "https://edubridge-dashboard-two.vercel.app/grades",
   },
   {
     slug: "legal-services-platform",
@@ -375,25 +376,6 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     technologies: ["Next.js", "Laravel", "PostgreSQL / MySQL", "PDF Generation"],
     accent: "indigo",
     visual: "legal",
-  },
-  {
-    slug: "cv-generator",
-    title_ar: "CV Generator",
-    title_en: "CV Generator",
-    eyebrow_ar: "منشئ سيرة ذاتية ومساعد مهني",
-    eyebrow_en: "Resume Builder & Career Assistant",
-    category: "web",
-    summary_ar: "تجربة ويب لبناء السيرة الذاتية مع قوالب متعددة، تقييم ATS ومساعد مهني يساعد المستخدم على تحسين الملخص والخبرات والمحتوى.",
-    summary_en: "A web resume builder with multiple templates, ATS guidance and a career assistant that helps users improve summaries, experience and content.",
-    challenge_ar: "منشئات السيرة الذاتية تصبح مزدحمة بسرعة، خصوصًا على الموبايل، كما أن المساعدة الذكية قد تعطي محتوى عامًا لا يناسب وظيفة المستخدم.",
-    challenge_en: "Resume builders become cluttered quickly, especially on mobile, while generic AI suggestions often fail to match the user's target role.",
-    solution_ar: "إعادة تنظيم تدفق التحرير، تحسين استجابة الواجهات، ربط المساعدة بالسياق الوظيفي، وتجهيز تجربة قوالب وتصدير أوضح.",
-    solution_en: "A reorganized editing flow, stronger responsive behavior, role-aware assistance, and a clearer template/export experience.",
-    highlights_ar: ["محرر CV متجاوب", "قوالب متعددة", "ATS Review", "Career Coach", "عربي وإنجليزي", "تصدير PDF"],
-    highlights_en: ["Responsive CV editor", "Multiple templates", "ATS review", "Career Coach", "Arabic & English", "PDF export"],
-    technologies: ["JavaScript", "Web UI", "AI-assisted UX", "PDF Export"],
-    accent: "sky",
-    visual: "cv",
   },
   {
     slug: "medskai",
@@ -475,6 +457,7 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     accent: "sky",
     visual: "education",
     coverImage: "/projects/edubridge/edubridge-1.webp",
+    website: "https://edubridge-dashboard-two.vercel.app/grades",
     galleryTitle_ar: "واجهات نظام EduBridge",
     galleryTitle_en: "EduBridge System Interfaces",
     galleryIntro_ar: "نظرة على واجهات النظام المختلفة التي تغطي لوحات المعلومات، إعدادات النظام، ومتابعة الأنشطة المدرسية اليومية.",
@@ -484,8 +467,14 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
       { src: "/projects/edubridge/edubridge-2.webp", title_ar: "إدارة الإعدادات والتهيئات", title_en: "Settings and Configuration", caption_ar: "شاشة لضبط إعدادات النظام وتخصيص الصلاحيات وإدارة البيانات الأساسية.", caption_en: "A screen to configure system settings, permissions, and manage core data." },
       { src: "/projects/edubridge/edubridge-3.webp", title_ar: "العمليات اليومية", title_en: "Daily Operations", caption_ar: "متابعة المهام اليومية والأنشطة المدرسية ضمن بيئة عمل منظمة.", caption_en: "Monitoring daily tasks and school activities within an organized workspace." },
       { src: "/projects/edubridge/edubridge-4.webp", title_ar: "إدارة الفصول والشؤون", title_en: "Classes and Affairs", caption_ar: "واجهة مخصصة لإدارة بيانات الفصول والطلاب والمتابعة الأكاديمية.", caption_en: "A dedicated interface for managing class data, students, and academic tracking." },
-      { src: "/projects/edubridge/edubridge-5.webp", title_ar: "شؤون الموظفين والمعلمين", title_en: "Staff and Teachers", caption_ar: "نظام لإدارة شؤون المعلمين والموظفين والجداول الزمنية.", caption_en: "A system for managing teacher and staff affairs and schedules." }
-    ]
+      
+      { src: "/projects/edubridge/edubridge-5.webp", title_ar: "شؤون الموظفين والمعلمين", title_en: "Staff and Teachers", caption_ar: "نظام لإدارة شؤون المعلمين والموظفين والجداول الزمنية.", caption_en: "A system for managing teacher and staff affairs and schedules." },
+      { src: "/projects/edubridge/edubridge-6.webp", title_ar: "الفصول والمواد الدراسية", title_en: "Classes and Subjects", caption_ar: "دليل المقررات والمواد التعليمية والفصول والشعب الدراسية وتوزيعها.", caption_en: "Guide for academic subjects, classes, and their distribution." },
+      { src: "/projects/edubridge/edubridge-7.webp", title_ar: "الجداول وحصص الانتظار", title_en: "Schedules and Substitutions", caption_ar: "جداول حصص الفصول الأسبوعية وتكليف معلمي الانتظار لتغطية غياب زملائهم.", caption_en: "Weekly class schedules and assigning substitute teachers." },
+      { src: "/projects/edubridge/edubridge-8.webp", title_ar: "السلوك والمواظبة", title_en: "Behavior and Attendance", caption_ar: "الملاحظات السلوكية المرصودة واعتمادها لإشعار ولي الأمر بالتدخل التربوي.", caption_en: "Monitored behavioral notes and approvals for parent notifications." },
+      { src: "/projects/edubridge/edubridge-9.webp", title_ar: "الحضور والغياب", title_en: "Attendance and Absence", caption_ar: "رصد غياب الطلاب اليومي وقائمة الإنذار المبكر للمتجاوزين للحد المسموح.", caption_en: "Daily student absence tracking and early warning list for limit exceeders." },
+      { src: "/projects/edubridge/edubridge-10.webp", title_ar: "الدرجات والاختبارات", title_en: "Grades and Exams", caption_ar: "كنترول الدرجات الأكاديمي، قوالب التقييم، واعتماد نتائج منتصف ونهاية الفصل.", caption_en: "Academic grade control, evaluation templates, and term results approval." }
+]
   }
 ];
 
