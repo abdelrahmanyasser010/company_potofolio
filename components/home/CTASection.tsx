@@ -10,14 +10,14 @@ export function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="section-space">
+    <section className="pt-8 pb-12 md:pt-12 md:pb-16">
       <div className="container-codely">
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-[36px] border border-cyan-300/20 bg-gradient-to-br from-blue-500/10 via-[#0a102d] to-violet-500/10 px-7 py-14 text-center shadow-[0_30px_100px_rgba(0,0,0,0.5)] md:px-12 md:py-20"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative overflow-hidden rounded-[32px] border border-cyan-300/20 bg-gradient-to-br from-blue-500/10 via-[#0a102d] to-violet-500/10 px-6 py-10 text-center shadow-[0_25px_80px_rgba(0,0,0,0.5)] md:px-10 md:py-14"
         >
           <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-cyan-400/15 blur-[90px] animate-pulse" />
           <div className="absolute -bottom-24 right-1/4 h-64 w-64 rounded-full bg-violet-400/10 blur-[90px]" />
@@ -28,18 +28,18 @@ export function CTASection() {
               {COMPANY_INFO.tagline}
             </div>
 
-            <h2 className="mt-5 text-balance text-4xl font-black leading-tight text-white md:text-6xl">
+            <h2 className="mt-4 text-balance text-3xl font-black leading-tight text-white md:text-5xl">
               {t("عندك فكرة جديدة أو نظام قائم يحتاج تطويرًا؟", "Starting something new or evolving an existing product?")}
             </h2>
 
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300 md:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-300 md:text-base">
               {t(
                 "ابعث لنا ما لديك حاليًا: الفكرة، الـ screenshots، الكود أو المشكلة. نراجع الصورة أولًا ونحدد معك المسار الأنسب بدل عرض جاهز لا يناسب المشروع.",
                 "Send what you have today: the idea, screenshots, code or the current problem. We review the real situation first and define the right path instead of forcing a predefined package."
               )}
             </p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
               <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                 <Link
                   href="/contact"
