@@ -444,7 +444,6 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
       { src: "/projects/medskai/profile.webp", title_ar: "الملف الشخصي والإعدادات", title_en: "Profile & Achievements", caption_ar: "إدارة الملف الشخصي، الوصول إلى الشهادات المكتسبة، المشتريات، المجموعات التخصصية والدروس المحملة.", caption_en: "Manage profile settings, access earned certificates, order history, specialty groups, and downloaded lessons." }
     ],
   },
-,
   {
     slug: "edubridge",
     title_ar: "EduBridge",
