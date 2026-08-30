@@ -69,8 +69,8 @@ export function HeroSection() {
 
           <motion.p variants={itemVariants} className="mt-7 max-w-[680px] text-[15px] leading-8 text-slate-300 md:text-[17px]">
             {t(
-              "فريق هندسي متكامل لبناء منصات الويب، تطبيقات الجوال، وأنظمة إدارة الأعمال (ERP & POS). لا نستخدم قوالب جاهزة، بل نكتب كوداً نظيفاً ونبني بنية تحتية قوية تلبي احتياجات التشغيل الفعلية لشركتك.",
-              "A complete engineering team for web platforms, mobile apps, and business systems (ERP & POS). We don't use templates; we write clean code and build solid infrastructure tailored to your actual operational needs."
+              "فريق هندسي متكامل لبناء منصات الويب، تطبيقات الجوال، وأنظمة إدارة الأعمال (ERP & POS) لمختلف القطاعات والأسواق (تجارة إلكترونية، لوجستيات، طبي، وغيرها). لا نستخدم قوالب جاهزة، بل نكتب كوداً نظيفاً ونبني بنية تحتية قوية تلبي احتياجات التشغيل الفعلية لشركتك.",
+              "A complete engineering team for web platforms, mobile apps, and business systems across diverse markets (e-commerce, logistics, medical, etc). We don't use templates; we write clean code and build solid infrastructure tailored to your actual operational needs."
             )}
           </motion.p>
 
