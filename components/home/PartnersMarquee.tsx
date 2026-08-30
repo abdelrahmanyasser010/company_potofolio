@@ -21,8 +21,10 @@ export function PartnersMarquee() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center"
         >
           <SectionHeading
+            align="center"
             eyebrow={t("طريقة العمل", "Process")}
             title={t("من الفكرة إلى نسخة تعمل — بخطوات مفهومة.", "From an idea to working software — without a black box.")}
           />
