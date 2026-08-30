@@ -135,7 +135,7 @@ export default function PortfolioPage() {
                 >
                   <Link
                     href={`/portfolio/${p.slug}`}
-                    className="group relative block aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070b1e] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-1.5 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(46,220,255,0.18)]"
+                    className="group relative block aspect-[1/1.2] w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070b1e] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-1.5 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(46,220,255,0.18)]"
                   >
                     {/* Project Image Background - Full Bleed */}
                     <div className="absolute inset-0 overflow-hidden">
