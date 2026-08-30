@@ -444,13 +444,17 @@
 
 ---
 
-## 5. مشاريع الموبايل: منصة Gear لنقل الركاب والتوصيل (Ride-Hailing & Logistics)
+## 5. مشاريع الموبايل: منصة Gear لنقل الركاب والتوصيل (تطبيق الراكب + تطبيق الكابتن)
 
 ### Gear (Gear) — منصة نقل وطلب رحلات متعددة الخدمات
 
 ![الغلاف الرئيسي - Gear](https://company-potofolio-tog3.vercel.app/projects/gear/gear-cover.webp)
 
 **نوع المشروع:** platform | **التقنيات:** `Flutter`, `Maps & Geolocation`, `Trip Management`, `Wallet & Ratings`
+
+📱 **تطبيق الراكب (Rider App - Google Play):** [تحميل تطبيق الراكب](https://play.google.com/store/apps/details?id=com.gear.app&hl=ar)
+
+🚘 **تطبيق الكابتن (Captain App - Google Play):** [تحميل تطبيق الكابتن](https://play.google.com/store/apps/details?id=com.gearcaptain.app&hl=ar)
 
 #### 📝 نبذة عن المشروع
 منصة نقل تجمع تطبيق الراكب وتطبيق الكابتن في تجربة واحدة، وتغطي الحجز الفوري، الرحلات داخل المدينة وخارجها، التأجير بالساعة، التوصيل، متابعة الرحلة، الأرباح والمحفظة والتقييمات.
@@ -580,6 +584,10 @@
 
 **نوع المشروع:** mobile | **التقنيات:** `Mobile App`, `Booking Platform`, `Service Marketplace`, `Payments & Scheduling`
 
+📱 **رابط متجر Google Play:** [تحميل التطبيق للأندرويد](https://play.google.com/store/apps/details?id=com.bub1.app)
+
+🍏 **رابط متجر App Store:** [تحميل التطبيق لـ iOS](https://apps.apple.com/us/app/bub-book-your-beauty/id6773297044)
+
 #### 📝 نبذة عن المشروع
 تطبيق ذكي لحجز صالونات التجميل وخدمات العناية الشخصية في عُمان، يجمع اكتشاف المراكز ومقارنة الخدمات والفلترة والحجز والمتابعة والدفع في تجربة واحدة، مع أدوات تشغيل لمقدمي الخدمات.
 
@@ -668,6 +676,10 @@
 
 **نوع المشروع:** mobile | **التقنيات:** `Mobile App`, `Field Services`, `Booking`, `Real-time Tracking`
 
+📱 **رابط متجر Google Play:** [تحميل التطبيق للأندرويد](https://play.google.com/store/search?q=ماي+فني)
+
+🍏 **رابط متجر App Store:** [تحميل التطبيق لـ iOS](https://apps.apple.com/kw/app/ماي-فني/id6746807479)
+
 #### 📝 نبذة عن المشروع
 منصة تساعد المستخدم على الوصول إلى فنيين لخدمات الصيانة المختلفة، مع حجز الموعد المناسب، متابعة الخدمة، الاطلاع على التقييمات، والتحقق من بيانات الفنيين لتقديم تجربة أكثر ثقة وتنظيمًا.
 
@@ -731,6 +743,8 @@
 ![الغلاف الرئيسي - Zone](https://company-potofolio-tog3.vercel.app/projects/zone/cover.webp)
 
 **نوع المشروع:** mobile | **التقنيات:** `Mobile App`, `Service Marketplace`, `Bookings`, `Scheduling`
+
+📱 **رابط متجر Google Play:** [تحميل التطبيق للأندرويد](https://play.google.com/store/apps/details?id=com.zone.app.zone)
 
 #### 📝 نبذة عن المشروع
 منصة رقمية تعمل كوسيط بين المستخدمين ومقدمي الخدمات، وتجمع خدمات مثل قاعات الأفراح ومراكز التجميل والصيانة وغيرها في مكان واحد لاكتشاف الخيارات والتواصل معها وحجزها بسهولة.
@@ -804,7 +818,7 @@
 
 **نوع المشروع:** mobile | **التقنيات:** `Flutter`, `REST APIs`, `Firebase`, `State Management`, `PDF Certificates`, `Media Streaming`
 
-🔗 **رابط الموقع / المعاينة:** [https://play.google.com/store/apps/details?id=soft.tadrees.ahmed_alazhry](https://play.google.com/store/apps/details?id=soft.tadrees.ahmed_alazhry)
+📱 **رابط متجر Google Play:** [تحميل التطبيق للأندرويد](https://play.google.com/store/apps/details?id=com.medskai.app&hl=ar)
 
 #### 📝 نبذة عن المشروع
 منصة رقمية مخصصة لطلاب وخريجي وممارسي العلوم الطبية والصحية التطبيقية في مصر والشرق الأوسط، تجمع بين الدورات التدريبية التخصصية، مجتمعات التخصص المباشرة، شهادات الكفاءة الموثقة، وفرص التوظيف والتدريب العملي.

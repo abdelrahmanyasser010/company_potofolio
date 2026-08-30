@@ -32,6 +32,7 @@ export interface PortfolioItem {
   coverImage?: string;
   website?: string;
   playStore?: string;
+  playStoreCaptain?: string;
   appStore?: string;
   galleryTitle_ar?: string;
   galleryTitle_en?: string;
@@ -463,6 +464,7 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     visual: "shipping",
     coverImage: "/projects/gear/gear-cover.webp",
     playStore: "https://play.google.com/store/apps/details?id=com.gear.app&hl=ar",
+    playStoreCaptain: "https://play.google.com/store/apps/details?id=com.gearcaptain.app&hl=ar",
     galleryTitle_ar: "Gear من منظور الراكب والكابتن",
     galleryTitle_en: "Gear across rider and captain workflows",
     galleryIntro_ar: "هذه لقطات حقيقية من المنتج توضح كيف تم التعامل مع رحلات الراكب وعمليات الكابتن داخل نفس المنصة، من الحجز والخريطة واختيار نوع الرحلة حتى السجل والأرباح والمحفظة.",

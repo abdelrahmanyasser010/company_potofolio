@@ -138,7 +138,23 @@ export default function ProjectCaseStudyPage() {
                     className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-6 py-3.5 text-xs font-bold text-emerald-300 shadow-[0_4px_20px_rgba(52,211,153,0.15)] transition-all hover:border-emerald-400/70 hover:bg-emerald-400/25"
                   >
                     <Smartphone className="h-4 w-4" />
-                    {t("تحميل التطبيق (Google Play)", "Download App (Google Play)")}
+                    {project.playStoreCaptain 
+                      ? t("تطبيق الراكب (Google Play)", "Rider App (Google Play)") 
+                      : t("تحميل التطبيق (Google Play)", "Download App (Google Play)")}
+                  </motion.a>
+                ) : null}
+
+                {project.playStoreCaptain ? (
+                  <motion.a
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={project.playStoreCaptain}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-6 py-3.5 text-xs font-bold text-emerald-300 shadow-[0_4px_20px_rgba(52,211,153,0.15)] transition-all hover:border-emerald-400/70 hover:bg-emerald-400/25"
+                  >
+                    <Smartphone className="h-4 w-4" />
+                    {t("تطبيق الكابتن (Google Play)", "Captain App (Google Play)")}
                   </motion.a>
                 ) : null}
 
