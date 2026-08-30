@@ -31,6 +31,8 @@ export interface PortfolioItem {
   visual: "shipping" | "pos" | "education" | "legal" | "cv";
   coverImage?: string;
   website?: string;
+  playStore?: string;
+  appStore?: string;
   galleryTitle_ar?: string;
   galleryTitle_en?: string;
   galleryIntro_ar?: string;
@@ -127,7 +129,8 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     accent: "amber",
     visual: "pos",
     coverImage: "/projects/tog/tog-complete-showcase.webp",
-    website: "https://play.google.com/store/apps/details?id=com.manaratalasr.apps.tog1_3&hl=ar",
+    website: "https://tog.sa/",
+    playStore: "https://play.google.com/store/apps/details?id=com.manaratalasr.apps.tog1_3&hl=ar",
     galleryTitle_ar: "طوق داخل بيئة العمل",
     galleryTitle_en: "TOG in the real workflow",
     galleryIntro_ar: "بدل عرض Mockups عامة، هذه لقطات فعلية من تجربة طوق توضح نقطة البيع، المنتجات، التقارير، الفوترة والطباعة كأجزاء مترابطة من نفس النظام.",

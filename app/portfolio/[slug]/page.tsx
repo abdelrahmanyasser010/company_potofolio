@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ExternalLink, Maximize2, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ExternalLink, Maximize2, Smartphone, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/context/LanguageContext";
 import { INITIAL_PORTFOLIO } from "@/lib/data/initialData";
@@ -113,19 +113,49 @@ export default function ProjectCaseStudyPage() {
                   </span>
                 ))}
               </div>
-              {project.website ? (
-                <motion.a
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  href={project.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full border border-codely-cyan/40 bg-codely-cyan/15 px-6 py-3.5 text-xs font-bold text-codely-cyan shadow-[0_4px_20px_rgba(46,220,255,0.15)] transition-all hover:border-codely-cyan/70 hover:bg-codely-cyan/25"
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  {t("زيارة الموقع الرسمي / المعاينة", "Visit official site / Demo")}
-                </motion.a>
-              ) : null}
+              <div className="mt-7 flex flex-wrap gap-3">
+                {project.website ? (
+                  <motion.a
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={project.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-codely-cyan/40 bg-codely-cyan/15 px-6 py-3.5 text-xs font-bold text-codely-cyan shadow-[0_4px_20px_rgba(46,220,255,0.15)] transition-all hover:border-codely-cyan/70 hover:bg-codely-cyan/25"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    {t("زيارة الموقع الرسمي", "Visit official website")}
+                  </motion.a>
+                ) : null}
+
+                {project.playStore ? (
+                  <motion.a
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={project.playStore}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-6 py-3.5 text-xs font-bold text-emerald-300 shadow-[0_4px_20px_rgba(52,211,153,0.15)] transition-all hover:border-emerald-400/70 hover:bg-emerald-400/25"
+                  >
+                    <Smartphone className="h-4 w-4" />
+                    {t("تحميل التطبيق (Google Play)", "Download App (Google Play)")}
+                  </motion.a>
+                ) : null}
+
+                {project.appStore ? (
+                  <motion.a
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={project.appStore}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-xs font-bold text-white shadow-[0_4px_20px_rgba(255,255,255,0.1)] transition-all hover:border-white/40 hover:bg-white/20"
+                  >
+                    <Smartphone className="h-4 w-4" />
+                    {t("تحميل من App Store", "Download on App Store")}
+                  </motion.a>
+                ) : null}
+              </div>
             </motion.div>
 
             <motion.div
