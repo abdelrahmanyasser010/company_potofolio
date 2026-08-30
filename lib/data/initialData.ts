@@ -174,6 +174,15 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     galleryIntro_en: "A tour through the store pages showing the UI design from the homepage and categories to the trust sections, FAQs, and seamless checkout screen.",
     gallery: [
       { src: "/projects/drralbayan/drralbayan-1.webp", title_ar: "الصفحة الرئيسية", title_en: "Homepage", caption_ar: "واجهة ترحيبية جذابة تركز على جودة اللحوم الطازجة وتشجع العميل على الطلب.", caption_en: "An attractive welcoming interface focusing on fresh meat quality." },
+
+
+      { src: "/projects/drralbayan/drralbayan-2.webp", title_ar: "تصفح الأقسام", title_en: "Browsing Categories", caption_ar: "عرض واضح لأقسام اللحوم المختلفة مثل العجول والمفروم والقطيعات الخاصة لتسهيل الاختيار.", caption_en: "Clear display of different meat categories to facilitate selection." },
+      { src: "/projects/drralbayan/drralbayan-3.webp", title_ar: "ميزات المتجر والثقة", title_en: "Store Features & Trust", caption_ar: "قسم مخصص لإبراز ميزات الجودة والتغليف والتوصيل السريع لبناء ثقة العميل.", caption_en: "A dedicated section highlighting quality, packaging, and fast delivery to build trust." },
+      { src: "/projects/drralbayan/drralbayan-4.webp", title_ar: "الأسئلة الشائعة", title_en: "FAQs", caption_ar: "إجابات واضحة على تساؤلات العملاء المعتادة حول جودة اللحوم والتوصيل.", caption_en: "Clear answers to common customer questions regarding meat quality and delivery." },
+      { src: "/projects/drralbayan/drralbayan-5.webp", title_ar: "إتمام الطلب (Checkout)", title_en: "Checkout", caption_ar: "شاشة مبسطة في خطوة واحدة لإتمام عملية الشراء وإدخال بيانات التوصيل والدفع بسهولة.", caption_en: "A simplified checkout screen for easy purchasing and data entry." }
+    ]
+  },
+
   {
     slug: "nebu-kids-store",
     title_ar: "متجر نيبو للأطفال",
@@ -255,13 +264,6 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
     accent: "amber",
     visual: "pos",
     coverImage: "https://codenest-eg.com/front-style/work/hamel-almisk.webp",
-  },
-
-      { src: "/projects/drralbayan/drralbayan-2.webp", title_ar: "تصفح الأقسام", title_en: "Browsing Categories", caption_ar: "عرض واضح لأقسام اللحوم المختلفة مثل العجول والمفروم والقطيعات الخاصة لتسهيل الاختيار.", caption_en: "Clear display of different meat categories to facilitate selection." },
-      { src: "/projects/drralbayan/drralbayan-3.webp", title_ar: "ميزات المتجر والثقة", title_en: "Store Features & Trust", caption_ar: "قسم مخصص لإبراز ميزات الجودة والتغليف والتوصيل السريع لبناء ثقة العميل.", caption_en: "A dedicated section highlighting quality, packaging, and fast delivery to build trust." },
-      { src: "/projects/drralbayan/drralbayan-4.webp", title_ar: "الأسئلة الشائعة", title_en: "FAQs", caption_ar: "إجابات واضحة على تساؤلات العملاء المعتادة حول جودة اللحوم والتوصيل.", caption_en: "Clear answers to common customer questions regarding meat quality and delivery." },
-      { src: "/projects/drralbayan/drralbayan-5.webp", title_ar: "إتمام الطلب (Checkout)", title_en: "Checkout", caption_ar: "شاشة مبسطة في خطوة واحدة لإتمام عملية الشراء وإدخال بيانات التوصيل والدفع بسهولة.", caption_en: "A simplified checkout screen for easy purchasing and data entry." }
-    ]
   },
 
   {
