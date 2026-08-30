@@ -149,16 +149,16 @@ export default function ServicesPage() {
                   <div className="text-[10px] font-extrabold tracking-[.18em] text-cyan-300/70">
                     0{i + 1}
                   </div>
-                  <h2 className="mt-2 text-2xl font-extrabold text-white transition-colors group-hover:text-cyan-200 md:text-3xl">
+                  <h2 className="mt-1.5 text-lg font-extrabold text-white transition-colors group-hover:text-cyan-200 md:text-xl">
                     {item.title}
                   </h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
+                  <p className="mt-2.5 max-w-2xl text-xs leading-6 text-slate-300 md:text-sm">
                     {item.text}
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-1.5">
                     {item.bullets.map((x) => (
                       <span key={x} className="capability-pill transition-colors hover:border-white/20">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-codely-cyan" />
+                        <CheckCircle2 className="h-3 w-3 text-codely-cyan" />
                         {x}
                       </span>
                     ))}

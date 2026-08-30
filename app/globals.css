@@ -147,9 +147,45 @@ html[dir="rtl"] h3 {
 .expertise-card span { font-size:10px; letter-spacing:.14em; color:#55dffb; font-weight:900; text-transform:uppercase; }
 .expertise-card h3 { margin-top:20px; font-size:17px; line-height:1.6; font-weight:900; }
 
-.service-track { position:relative; overflow:hidden; display:grid; grid-template-columns:auto 1fr; gap:20px; border:1px solid rgba(255,255,255,.09); border-radius:28px; background:linear-gradient(145deg,rgba(14,23,55,.8),rgba(7,11,29,.88)); padding:28px; transition:.25s ease; }
-.service-track:hover { transform:translateY(-3px); border-color:rgba(46,220,255,.18); box-shadow:0 24px 70px rgba(0,0,0,.2); }
-.service-track-icon { width:50px; height:50px; display:grid; place-items:center; border-radius:17px; color:#55dffb; border:1px solid rgba(46,220,255,.14); background:rgba(46,220,255,.055); }
+.service-track {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(14, 23, 55, .65), rgba(7, 11, 29, .82));
+  padding: 22px 24px;
+  transition: all .25s ease;
+}
+.service-track:hover {
+  transform: translateY(-2px);
+  border-color: rgba(46, 220, 255, .25);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, .25);
+}
+.service-track-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #55dffb;
+  border: 1px solid rgba(46, 220, 255, .16);
+  background: rgba(46, 220, 255, .06);
+}
+.capability-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .03);
+  border-radius: 999px;
+  padding: 5px 11px;
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 600;
+}
 .domain-chip { display:inline-flex; align-items:center; border:1px solid rgba(255,255,255,.1); border-radius:18px; background:rgba(255,255,255,.025); padding:15px 20px; color:#dce6f8; font-size:13px; font-weight:800; }
 .domain-chip:nth-child(3n+2) { border-color:rgba(174,103,255,.14); background:rgba(174,103,255,.035); }
 .contact-cta { border:1px solid rgba(46,220,255,.14); border-radius:34px; background:radial-gradient(circle at 15% 0%,rgba(46,220,255,.08),transparent 20rem),linear-gradient(135deg,rgba(11,18,45,.96),rgba(10,8,35,.95)); padding:36px; display:flex; align-items:center; justify-content:space-between; gap:32px; }

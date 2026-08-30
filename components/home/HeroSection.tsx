@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { useLanguage } from "@/lib/context/LanguageContext";
+import { FloatingCodeSymbols } from "./FloatingCodeSymbols";
 
 export function HeroSection() {
   const { t } = useLanguage();
@@ -48,6 +49,8 @@ export function HeroSection() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="hero-orb hero-orb-violet"
       />
+
+      <FloatingCodeSymbols />
 
       <div className="container-codely relative grid min-h-[720px] items-center gap-14 py-16 lg:grid-cols-[.93fr_1.07fr] lg:py-24">
         <motion.div

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Alexandria, Inter } from "next/font/google";
+import { Tajawal, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/context/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
 
-const alexandria = Alexandria({
+const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
-  variable: "--font-ibm", // Keep the same variable name so we don't have to change tailwind.config.ts everywhere
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-ibm", // Keep the same CSS variable for seamless Tailwind compatibility
+  weight: ["300", "400", "500", "700", "800", "900"],
   display: "swap",
 });
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ar" dir="rtl" className={`${alexandria.variable} ${inter.variable}`}>
+    <html lang="ar" dir="rtl" className={`${tajawal.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-codely-ink text-white font-sans antialiased">
         <LanguageProvider>
           <Navbar />
