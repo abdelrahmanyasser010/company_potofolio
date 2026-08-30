@@ -76,7 +76,7 @@ export default function ContactPage() {
               <span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan" />
               {t("ابدأ مشروعك", "Start a project")}
             </div>
-            <h1 className="mt-6 text-balance text-4xl font-black leading-[1.12] text-white md:text-6xl">
+            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.12] text-white md:text-6xl">
               {t("شاركنا متطلبات مشروعك، وسنحدد معك الخطة الهندسية والتنفيذ.", "Share your project requirements, and we will plan the execution together.")}
             </h1>
             <p className="mt-6 max-w-3xl text-[15px] leading-8 text-slate-300 md:text-[17px]">
@@ -99,7 +99,7 @@ export default function ContactPage() {
             className="contact-form-card"
           >
             <div className="mb-8">
-              <h2 className="text-2xl font-black text-white">
+              <h2 className="text-2xl font-extrabold text-white">
                 {t("تفاصيل التواصل والمشروع", "Contact & project details")}
               </h2>
               <p className="mt-2 text-sm leading-6 text-slate-300">
@@ -244,7 +244,7 @@ export default function ContactPage() {
               <div className="contact-icon">
                 <Mail className="h-5 w-5" />
               </div>
-              <h2 className="mt-6 text-2xl font-black text-white">{t("تواصل مباشر", "Direct contact")}</h2>
+              <h2 className="mt-6 text-2xl font-extrabold text-white">{t("تواصل مباشر", "Direct contact")}</h2>
               <p className="mt-3 text-sm leading-7 text-slate-300">
                 {t(
                   "لو عندك ملفات، Screenshots أو روابط، ابعتها مباشرة. نقدر نبدأ منها بدون عرض طويل.",
@@ -253,7 +253,7 @@ export default function ContactPage() {
               </p>
               <a
                 href={`mailto:${COMPANY_INFO.email}`}
-                className="mt-6 block break-all text-base font-black text-white transition-colors hover:text-codely-cyan"
+                className="mt-6 block break-all text-base font-extrabold text-white transition-colors hover:text-codely-cyan"
                 dir="ltr"
               >
                 {COMPANY_INFO.email}
@@ -289,7 +289,7 @@ export default function ContactPage() {
             </div>
 
             <div className="contact-side-card">
-              <div className="text-xs font-black uppercase tracking-[.16em] text-slate-400">
+              <div className="text-xs font-extrabold uppercase tracking-[.16em] text-slate-400">
                 {t("يفيدنا أن تذكر", "Helpful context")}
               </div>
               <div className="mt-5 space-y-3">

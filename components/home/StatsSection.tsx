@@ -49,7 +49,7 @@ export function StatsSection() {
               <div className="mb-4 grid h-9 w-9 place-items-center rounded-xl bg-cyan-400/[0.08] text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-400/[0.15] group-hover:shadow-[0_0_15px_rgba(46,220,255,0.25)]">
                 <CheckCircle2 className="h-4 w-4" />
               </div>
-              <h3 className="text-sm font-black text-white transition-colors duration-200 group-hover:text-cyan-200">
+              <h3 className="text-sm font-extrabold text-white transition-colors duration-200 group-hover:text-cyan-200">
                 {a}
               </h3>
               <p className="mt-2 text-xs leading-6 text-slate-400">

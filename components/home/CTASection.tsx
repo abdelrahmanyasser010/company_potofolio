@@ -28,7 +28,7 @@ export function CTASection() {
               {COMPANY_INFO.tagline}
             </div>
 
-            <h2 className="mt-4 text-balance text-3xl font-black leading-tight text-white md:text-5xl">
+            <h2 className="mt-4 text-balance text-3xl font-extrabold leading-tight text-white md:text-5xl">
               {t("عندك فكرة جديدة أو نظام قائم يحتاج تطويرًا؟", "Starting something new or evolving an existing product?")}
             </h2>
 

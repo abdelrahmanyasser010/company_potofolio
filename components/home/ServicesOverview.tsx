@@ -43,7 +43,7 @@ export function ServicesOverview() {
           />
           <Link
             href="/portfolio"
-            className="group shrink-0 inline-flex items-center gap-1.5 text-sm font-black text-white transition-colors hover:text-codely-cyan"
+            className="group shrink-0 inline-flex items-center gap-1.5 text-sm font-extrabold text-white transition-colors hover:text-codely-cyan"
           >
             <span>{t("كل المشاريع", "All projects")}</span>
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -74,10 +74,10 @@ export function ServicesOverview() {
                   </div>
                 </div>
                 <div className="border-t border-white/8 p-6">
-                  <div className="text-[10px] font-black uppercase tracking-[.16em] text-slate-400">
+                  <div className="text-[10px] font-extrabold uppercase tracking-[.16em] text-slate-400">
                     {t(p.eyebrow_ar, p.eyebrow_en)}
                   </div>
-                  <h3 className="mt-2 text-2xl font-black text-white transition-colors duration-200 group-hover:text-cyan-200">
+                  <h3 className="mt-2 text-2xl font-extrabold text-white transition-colors duration-200 group-hover:text-cyan-200">
                     {t(p.title_ar, p.title_en)}
                   </h3>
                   <p className="mt-3 line-clamp-3 text-xs leading-6 text-slate-400">

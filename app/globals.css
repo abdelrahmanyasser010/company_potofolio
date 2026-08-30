@@ -48,17 +48,17 @@ html[dir="rtl"] body {
 .text-balance { text-wrap: balance; }
 .container-codely { @apply mx-auto w-full max-w-7xl px-5 sm:px-7 lg:px-10; }
 .section-space { @apply py-20 md:py-24 lg:py-28; }
-.eyebrow { @apply inline-flex items-center gap-2 text-[11px] font-black tracking-[0.18em] uppercase text-cyan-300; }
+.eyebrow { @apply inline-flex items-center gap-2 text-[11px] font-extrabold tracking-[0.18em] uppercase text-cyan-300; }
 .soft-line { border-color: var(--line); }
 
 .display-title {
-  font-size: clamp(2.85rem, 5.2vw, 5.2rem);
-  line-height: 1.08;
-  font-weight: 900;
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  line-height: 1.15;
+  font-weight: 800;
   letter-spacing: -0.035em;
   text-wrap: balance;
 }
-html[dir="rtl"] .display-title { letter-spacing: -0.02em; line-height: 1.12; }
+html[dir="rtl"] .display-title { letter-spacing: -0.01em; line-height: 1.25; }
 
 .grid-bg {
   background-image:
@@ -84,7 +84,7 @@ html[dir="rtl"] .display-title { letter-spacing: -0.02em; line-height: 1.12; }
 .button-primary,
 .button-secondary,
 .button-whatsapp {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-black transition duration-200;
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-extrabold transition duration-200;
 }
 .button-primary { background: #fff; color: #071027; box-shadow: 0 12px 38px rgba(0,0,0,.18); }
 .button-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 45px rgba(255,255,255,.09); }

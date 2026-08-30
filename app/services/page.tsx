@@ -93,29 +93,29 @@ export default function ServicesPage() {
     <div>
       <section className="services-hero border-b border-white/[.08]">
         <div className="container-codely py-20 md:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65 }}
-            className="max-w-4xl"
-          >
-            <div className="eyebrow">
-              <Code2 className="h-4 w-4" />
-              {t("آلية الدعم والشراكة", "How we support your product")}
-            </div>
-            <h1 className="mt-6 text-balance text-4xl font-black leading-[1.12] text-white md:text-6xl">
-              {t(
-                "لسنا قائمة خدمات صلبة؛ بل نصمّم الفريق والحل البرمجي وفق احتياج مشروعك الحقيقي.",
-                "Not a rigid menu of services. We tailor the team and architecture around your specific product requirements."
-              )}
-            </h1>
-            <p className="mt-7 max-w-3xl text-[15px] leading-8 text-slate-300 md:text-[17px]">
-              {t(
-                "يمكننا استلام وتطوير المنتج بالكامل، أو التضامن مع فريقك في طبقة محددة من النظام. نضمن نطاق عمل واضحاً، ومسؤولية هندسية محددة، ونتيجة تشغيلية قابلة للتوسع والتطوير المستمر.",
-                "We can take full ownership of the product or collaborate on specific architecture layers. We ensure a clear scope, defined engineering responsibilities, and scalable results."
-              )}
-            </p>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl mx-auto text-center flex flex-col items-center"
+            >
+              <div className="eyebrow flex justify-center">
+                <Code2 className="h-4 w-4" />
+                {t("آلية الدعم والشراكة", "How we support your product")}
+              </div>
+              <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.3] text-white md:text-5xl lg:text-6xl">
+                {t(
+                  "لسنا قائمة خدمات صلبة؛ بل نصمّم الفريق والحل البرمجي وفق احتياج مشروعك الحقيقي.",
+                  "Not a rigid menu of services. We tailor the team and architecture around your specific product requirements."
+                )}
+              </h1>
+              <p className="mt-7 max-w-3xl text-[15px] leading-8 text-slate-300 md:text-[17px]">
+                {t(
+                  "يمكننا استلام وتطوير المنتج بالكامل، أو التضامن مع فريقك في طبقة محددة من النظام. نضمن نطاق عمل واضحاً، ومسؤولية هندسية محددة، ونتيجة تشغيلية قابلة للتوسع والتطوير المستمر.",
+                  "We can take full ownership of the product or collaborate on specific architecture layers. We ensure a clear scope, defined engineering responsibilities, and scalable results."
+                )}
+              </p>
+            </motion.div>
         </div>
       </section>
 
@@ -146,10 +146,10 @@ export default function ServicesPage() {
                   <item.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-black tracking-[.18em] text-cyan-300/70">
+                  <div className="text-[10px] font-extrabold tracking-[.18em] text-cyan-300/70">
                     0{i + 1}
                   </div>
-                  <h2 className="mt-2 text-2xl font-black text-white transition-colors group-hover:text-cyan-200 md:text-3xl">
+                  <h2 className="mt-2 text-2xl font-extrabold text-white transition-colors group-hover:text-cyan-200 md:text-3xl">
                     {item.title}
                   </h2>
                   <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
@@ -178,7 +178,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
           >
             <div className="eyebrow">{t("خبرة متنوعة", "Cross-domain experience")}</div>
-            <h2 className="mt-5 text-3xl font-black leading-tight text-white md:text-5xl">
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight text-white md:text-5xl">
               {t("بنينـا أنظمة تتعامل مع تشغيل حقيقي وبيانات حقيقية.", "We build systems around real operations and real data.")}
             </h2>
             <p className="mt-5 text-sm leading-7 text-slate-300">
@@ -222,7 +222,7 @@ export default function ServicesPage() {
           >
             <div>
               <div className="eyebrow">{t("تريد استشارة لبدء مشروعك؟", "Need guidance to launch?")}</div>
-              <h2 className="mt-4 text-3xl font-black text-white md:text-5xl">
+              <h2 className="mt-4 text-3xl font-extrabold text-white md:text-5xl">
                 {t(
                   "تشارك معنا متطلباتك الحالية، وسنحدد معك الخطوة الهندسية الأولى.",
                   "Share your current requirements, and we will define the first engineering milestone together."

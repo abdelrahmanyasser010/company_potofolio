@@ -73,7 +73,7 @@ export function IntroServices() {
                 <div className="mb-8 grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-white/[.04] text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:border-codely-cyan/40 group-hover:bg-cyan-400/[0.08] group-hover:shadow-[0_0_25px_rgba(46,220,255,0.2)]">
                   <Icon className="h-5 w-5 transition-transform duration-300" />
                 </div>
-                <h3 className="text-xl font-black text-white transition-colors duration-200 group-hover:text-cyan-200">
+                <h3 className="text-xl font-extrabold text-white transition-colors duration-200 group-hover:text-cyan-200">
                   {t(s.title_ar, s.title_en)}
                 </h3>
                 <p className="mt-3 min-h-[76px] text-sm leading-7 text-slate-400">

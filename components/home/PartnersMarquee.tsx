@@ -41,10 +41,10 @@ export function PartnersMarquee() {
               whileHover={{ y: -5 }}
               className="group relative rounded-2xl border border-white/8 bg-white/[.025] p-6 transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/[0.045] hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)]"
             >
-              <span className="relative z-10 grid h-12 w-12 place-items-center rounded-full border border-cyan-300/25 bg-[#071027] text-xs font-black text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-300 group-hover:shadow-[0_0_20px_rgba(46,220,255,0.3)]">
+              <span className="relative z-10 grid h-12 w-12 place-items-center rounded-full border border-cyan-300/25 bg-[#071027] text-xs font-extrabold text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-300 group-hover:shadow-[0_0_20px_rgba(46,220,255,0.3)]">
                 {n}
               </span>
-              <h3 className="mt-7 text-lg font-black text-white transition-colors duration-200 group-hover:text-cyan-200">
+              <h3 className="mt-7 text-lg font-extrabold text-white transition-colors duration-200 group-hover:text-cyan-200">
                 {a}
               </h3>
               <p className="mt-2 text-xs leading-6 text-slate-400">
