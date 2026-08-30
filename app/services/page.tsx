@@ -103,7 +103,7 @@ export default function ServicesPage() {
                 <Code2 className="h-4 w-4" />
                 {t("آلية الدعم والشراكة", "How we support your product")}
               </div>
-              <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.3] text-white md:text-5xl lg:text-6xl">
+              <h1 className="mt-6 text-balance text-4xl font-extrabold leading-normal text-white md:text-5xl lg:text-6xl">
                 {t(
                   "لسنا قائمة خدمات صلبة؛ بل نصمّم الفريق والحل البرمجي وفق احتياج مشروعك الحقيقي.",
                   "Not a rigid menu of services. We tailor the team and architecture around your specific product requirements."
@@ -178,7 +178,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
           >
             <div className="eyebrow">{t("خبرة متنوعة", "Cross-domain experience")}</div>
-            <h2 className="mt-5 text-3xl font-extrabold leading-tight text-white md:text-5xl">
+            <h2 className="mt-5 text-3xl font-extrabold leading-normal text-white md:text-5xl">
               {t("بنينـا أنظمة تتعامل مع تشغيل حقيقي وبيانات حقيقية.", "We build systems around real operations and real data.")}
             </h2>
             <p className="mt-5 text-sm leading-7 text-slate-300">

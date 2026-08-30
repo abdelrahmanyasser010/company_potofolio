@@ -172,7 +172,7 @@ export default function AboutPage() {
                 <Globe2 className="h-4 w-4" />
                 {t("خبرة إقليمية", "Regional experience")}
               </div>
-              <h2 className="mt-5 text-3xl font-extrabold leading-tight text-white md:text-5xl">
+              <h2 className="mt-5 text-3xl font-extrabold leading-normal text-white md:text-5xl">
                 {t("نفهم اختلاف السوق، وليس فقط اختلاف اللغة.", "We account for market differences — not only language.")}
               </h2>
             </motion.div>
