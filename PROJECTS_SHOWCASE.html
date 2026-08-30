@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codely • ملف المشاريع وتطبيقات الموبايل (Portfolio Doc)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #060919;
+  --card-bg: #0d122b;
+  --card-border: rgba(255,255,255,0.08);
+  --cyan: #2edcff;
+  --cyan-dim: rgba(46,220,255,0.1);
+  --violet: #ae67ff;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+}
+
+body {
+  font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.doc-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.doc-badge {
+  display: inline-block;
+  background: var(--cyan-dim);
+  border: 1px solid rgba(46,220,255,0.3);
+  color: var(--cyan);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.doc-header h1 {
+  font-size: clamp(26px, 4vw, 38px);
+  color: var(--text-white);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.doc-header p {
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-size: 15px;
+}
+
+.quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.quick-nav a {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.quick-nav a:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 36px 32px;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 6px;
+}
+
+.project-eyebrow {
+  font-size: 15px;
+  color: var(--cyan);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.cover-container {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  border: 1px solid var(--card-border);
+  background: #000;
+}
+.cover-container img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.links-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.btn-web {
+  background: linear-gradient(135deg, var(--cyan), #0284c7);
+  color: #03081a;
+}
+.btn-play {
+  background: rgba(52, 211, 153, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+.btn-link:hover {
+  transform: translateY(-2px);
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.chip {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--card-border);
+  color: #cbd5e1;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.content-section {
+  margin-bottom: 24px;
+}
+.content-section h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.content-section p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+.feature-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.feature-list li {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feature-list li::before {
+  content: '✔';
+  color: var(--cyan);
+  font-size: 12px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.gallery-card {
+  background: #070a1e;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.gallery-body {
+  padding: 14px;
+  flex: 1;
+}
+.gallery-body h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 4px;
+}
+.gallery-body p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media print {
+  body { background: #fff; color: #000; padding: 0; }
+  .project-card { border: 1px solid #ddd; background: #fff; color: #000; box-shadow: none; page-break-inside: avoid; }
+  .quick-nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="doc-header">
+    <div class="doc-badge">Codely Studio • Portfolio Document</div>
+    <h1>ملف استعراض المشاريع المختارة</h1>
+    <p>توثيق تفصيلي لمشاريع الموبايل، التوصيل واللوجستيات، المدارس، منصة المحامي، ومنظومة طوق السحابية جاهز للمشاركة وإعادة الاستخدام مع روابط الصور الحية.</p>
+    
+    <nav class="quick-nav">
+      <a href="#tog-pos">1. طوق السحابي (TOG)</a>
+      <a href="#deliver-it">2. Deliver It</a>
+      <a href="#edubridge">3. EduBridge</a>
+      <a href="#zdraft">4. Z DRAFT</a>
+      <a href="#gear">5. Gear</a>
+      <a href="#bub-book-your-beauty">6. BUB – Book Your Beauty</a>
+      <a href="#my-fanni">7. ماي فني</a>
+      <a href="#zone-services">8. Zone</a>
+      <a href="#medskai">9. MedSkAi</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PROJECT: طوق السحابي (TOG) -->
+    <article class="project-card" id="tog-pos">
+      <div class="project-tag">مشروع #1 • business</div>
+      <h2 class="project-title">طوق السحابي (TOG) <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(TOG Cloud)</span></h2>
+      <div class="project-eyebrow">نظام محاسبي سحابي ونقاط بيع</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-complete-showcase.webp" alt="طوق السحابي (TOG)" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+        <a href="https://tog.sa/" target="_blank" class="btn-link btn-web">🌐 زيارة الموقع / المعاينة</a>
+        <a href="https://play.google.com/store/apps/details?id=com.manaratalasr.apps.tog1_3&hl=ar" target="_blank" class="btn-link btn-play">📱 متجر Google Play</a>
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Flutter</span>
+        <span class="chip">Cloud Platform</span>
+        <span class="chip">POS</span>
+        <span class="chip">E-Invoicing</span>
+        <span class="chip">ZATCA Integration</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>نظام محاسبي سحابي متكامل للمؤسسات الصغيرة والمتوسطة، يجمع نقاط البيع وإدارة المنتجات والمخزون والمعاملات المالية والفوترة الإلكترونية والتقارير في تجربة واحدة يمكن الوصول إليها من الأجهزة الذكية.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>إدارة المبيعات والمخزون والفواتير والحسابات من أدوات منفصلة تخلق أخطاء وتكرارًا في العمل وتُصعّب على صاحب النشاط معرفة وضعه المالي والتشغيلي بسرعة، خصوصًا مع الحاجة إلى الفوترة الإلكترونية وضريبة القيمة المضافة والطباعة اليومية.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم بناء طوق كمنظومة موحدة تربط نقطة البيع بالمنتجات والمخزون والملخصات والتقارير والفواتير الإلكترونية والطباعة. الواجهة مصممة لتقليل خطوات التشغيل اليومية، مع وصول سحابي ودعم الأجهزة الذكية وخيارات دفع وباقات تناسب أحجام أعمال مختلفة.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>نقطة بيع سريعة وواضحة</li>
+          <li>إدارة المنتجات والمخزون</li>
+          <li>فواتير إلكترونية وربط ضريبي</li>
+          <li>ملخصات وتقارير يومية</li>
+          <li>طباعة الفواتير وربط الطابعات</li>
+          <li>دعم ضريبة القيمة المضافة</li>
+          <li>أجهزة كاشير محمولة وملحقات POS</li>
+          <li>وصول سحابي من الأجهزة الذكية</li>
+          <li>خيارات دفع وباقات متعددة بينها باقة مجانية محدودة المدة</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (طوق داخل بيئة العمل)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">بدل عرض Mockups عامة، هذه لقطات فعلية من تجربة طوق توضح نقطة البيع، المنتجات، التقارير، الفوترة والطباعة كأجزاء مترابطة من نفس النظام.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-pos.webp" alt="نقطة البيع" loading="lazy" />
+            <div class="gallery-body">
+              <h5>نقطة البيع</h5>
+              <p>واجهة بيع موجهة للاستخدام السريع مع المنتجات والتسعير وإتمام الفاتورة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-summary-reports.webp" alt="الملخصات والتقارير" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الملخصات والتقارير</h5>
+              <p>متابعة المبيعات والمقبوضات والمصروفات والمرتجعات بصورة يومية واضحة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-electronic-invoices.webp" alt="الفوترة الإلكترونية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الفوترة الإلكترونية</h5>
+              <p>إصدار الفواتير إلكترونيًا ضمن نفس تدفق المبيعات بدون فصل المستخدم عن النظام.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-printing.webp" alt="الطباعة" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الطباعة</h5>
+              <p>إعداد الطابعات واختبارها والتحكم في سيناريوهات طباعة الفواتير.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-products.webp" alt="إدارة المنتجات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>إدارة المنتجات</h5>
+              <p>قائمة منتجات قابلة للبحث والمتابعة ضمن إدارة النشاط اليومية.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-services.webp" alt="الخدمات والعمليات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الخدمات والعمليات</h5>
+              <p>وصول موحد لنقطة البيع والفروع والملخص والمناوبات والسندات والتقارير.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-ecosystem.webp" alt="منظومة متعددة الأجهزة" loading="lazy" />
+            <div class="gallery-body">
+              <h5>منظومة متعددة الأجهزة</h5>
+              <p>تجربة تمتد بين الموبايل وشاشة التشغيل وأجهزة نقطة البيع في نفس بيئة العمل.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-brand.webp" alt="هوية طوق" loading="lazy" />
+            <div class="gallery-body">
+              <h5>هوية طوق</h5>
+              <p>هوية المنتج المرئية المبنية حول اللون الأصفر وطابع نقاط البيع والتجارة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-sunmi-v2s.webp" alt="نقطة بيع محمولة SUNMI V2s" loading="lazy" />
+            <div class="gallery-body">
+              <h5>نقطة بيع محمولة SUNMI V2s</h5>
+              <p>تشغيل طوق على جهاز كاشير محمول يجمع شاشة نقطة البيع والطباعة والدفع في جهاز واحد مناسب للعمل الميداني ونقاط البيع السريعة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-accounting-ecosystem-poster.webp" alt="منظومة طوق المحاسبية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>منظومة طوق المحاسبية</h5>
+              <p>عرض متكامل للبرنامج مع الشاشات والأجهزة والطابعات والباركود والملحقات التي تخدم نقاط البيع والمخزون والمحاسبة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-zatca-integration.webp" alt="الربط مع هيئة الزكاة والضريبة والجمارك" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الربط مع هيئة الزكاة والضريبة والجمارك</h5>
+              <p>تكامل الفوترة مع هيئة الزكاة والضريبة والجمارك لتسهيل إرسال الفواتير ودعم الامتثال داخل دورة البيع.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-mobile-cashier.webp" alt="كاشير متنقل" loading="lazy" />
+            <div class="gallery-body">
+              <h5>كاشير متنقل</h5>
+              <p>تجربة كاشير محمولة للمطاعم والكافيهات والتموينات والمتاجر والمندوبين مع طباعة فورية وإدارة المبيعات والمخزون.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/tog/tog-complete-showcase.webp" alt="طوق كنظام تشغيل متكامل" loading="lazy" />
+            <div class="gallery-body">
+              <h5>طوق كنظام تشغيل متكامل</h5>
+              <p>تجميع بصري يوضح البرنامج، الكاشير المحمول، التكامل الضريبي، الأجهزة والملحقات كمنظومة واحدة مترابطة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: Deliver It -->
+    <article class="project-card" id="deliver-it">
+      <div class="project-tag">مشروع #2 • business</div>
+      <h2 class="project-title">Deliver It <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(Deliver It)</span></h2>
+      <div class="project-eyebrow">منصة مؤسسية لإدارة الشحن والعمليات اللوجستية</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/deliver-it-cover.webp" alt="Deliver It" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+        <a href="https://deliver-it-dashboard.vercel.app/" target="_blank" class="btn-link btn-web">🌐 زيارة الموقع / المعاينة</a>
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">React 19</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">Vite</span>
+        <span class="chip">Context API</span>
+        <span class="chip">Domain Reducers</span>
+        <span class="chip">Lucide React</span>
+        <span class="chip">CODE128 SVG</span>
+        <span class="chip">LocalStorage</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>منصة تشغيل متكاملة لشركات الشحن وإدارة توصيل الطرود B2B/B2C، تغطي دورة حياة الشحنة من طلبات الاستلام لدى التجار والاستلام بالباركود داخل المخزن، مرورًا بالتوزيع الميداني والتسليم الجزئي، وحتى التحصيلات المالية وتسويات التجار وعهد المناديب.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>عمليات الشحن اليومية تجمع بين التجار والمخازن والمناديب والعملاء والمحاسبة، ومع تعدد حالات الشحنة تصبح الأخطاء التشغيلية والمالية أكثر احتمالًا، خصوصًا في التسليم الجزئي والمرتجعات والتحصيل النقدي واعتماد الحالات الميدانية. المطلوب كان نظامًا يجعل شركة الشحن صاحبة الحالة الرسمية ويجمع التشغيل والمحاسبة والصلاحيات في مسار واحد قابل للمراجعة.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم تصميم لوحة Deliver It كمركز قيادة تشغيلي يربط إدارة الشحنات بمركز العمليات، المندوبين، التجار، المحادثات، التقارير والمحاسبة. يدعم النظام محرك تسليم جزئي يقسم البوليصة عند استلام بعض العناصر ورفض أخرى، ونظام استلام بالباركود، وطباعة مجمعة للملصقات الحرارية وA4، وتسويات التجار وعهد المناديب وقيود مالية، مع RBAC لأدوار الإدارة والعمليات والمحاسبة والدعم.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>مركز عمليات موحد للاستلام والتأكيد والتوزيع والتحديثات والمرتجعات</li>
+          <li>محرك تسليم جزئي وتقسيم البوالص مع Retry وReturn Cases</li>
+          <li>احتساب COD للقطع المستلمة مع الحفاظ على قواعد رسوم الشحن</li>
+          <li>استلام مخزني بالباركود مع كشف المسح المكرر والدفعات الناقصة</li>
+          <li>طباعة Bulk للملصقات الحرارية 10×15 وA4 مع CODE128 SVG</li>
+          <li>إدارة المناديب والتجار والمستخدمين والصلاحيات RBAC</li>
+          <li>مطابقة عهد المناديب والتحصيلات النقدية وتسويات التجار</li>
+          <li>دفتر قيود مالية وإغلاق ومراجعة الفترات الشهرية</li>
+          <li>تقارير تشغيلية ومالية قابلة للتصفية والتصدير</li>
+          <li>محادثات داخلية تربط الدعم والتشغيل بالتجار</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (لوحة Deliver It عبر دورة التشغيل الكاملة)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">هذه لقطات فعلية من لوحة التشغيل توضح كيف تم تنظيم المراحل الأساسية داخل شركة الشحن: المتابعة اليومية، مركز العمليات، إدارة الشحنات، المندوبين والتجار، الصلاحيات، المحاسبة، التقارير والمحادثات — ضمن واجهة واحدة متماسكة.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/overview.webp" alt="الرئيسية ومؤشرات التشغيل" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الرئيسية ومؤشرات التشغيل</h5>
+              <p>ملخص لحظي للشحنات وحالات التسليم والتحصيلات والتسويات والمندوبين النشطين مع أحدث الشحنات.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/operations-center.webp" alt="مركز العمليات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>مركز العمليات</h5>
+              <p>واجهة تشغيلية لتأكيد الاستلام من التجار، توزيع الشحنات، متابعة البوالص واعتماد الحالات قبل انتقالها للمرحلة التالية.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/shipments.webp" alt="إدارة الشحنات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>إدارة الشحنات</h5>
+              <p>بحث وفلاتر حسب الحالة والمحافظة والمندوب والتاجر مع عرض رقم الشحنة والحالة والدفع والمبلغ والإجراءات المتاحة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/users-permissions.webp" alt="المستخدمون والصلاحيات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>المستخدمون والصلاحيات</h5>
+              <p>إدارة المستخدمين والأدوار والصلاحيات التفصيلية مع فصل واضح بين الإدارة والعمليات والمحاسبة والدعم.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/drivers.webp" alt="إدارة المناديب" loading="lazy" />
+            <div class="gallery-body">
+              <h5>إدارة المناديب</h5>
+              <p>متابعة حالة المندوب والمنطقة والعهدة وتسليمات اليوم والكاش المعلق مع إجراءات الإدارة والتعديل.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/merchants.webp" alt="إدارة التجار" loading="lazy" />
+            <div class="gallery-body">
+              <h5>إدارة التجار</h5>
+              <p>بيانات التجار وأحجام الشحنات وقيم الدوران والتسويات المعلقة وإجمالي التجارة في شاشة واحدة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/accounting-close.webp" alt="المحاسبة وتقفيلة الشهر" loading="lazy" />
+            <div class="gallery-body">
+              <h5>المحاسبة وتقفيلة الشهر</h5>
+              <p>مراجعة قيمة أوردرات البزنس والتحصيل COD ومستحقات التجار وصافي الشركة مع قائمة تحقق لإغلاق الفترة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/reports.webp" alt="التقارير والإحصائيات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>التقارير والإحصائيات</h5>
+              <p>تقارير مرنة للمبيعات والبلاد والتشغيل والمناديب والمحافظات مع مؤشرات سريعة وتصدير Excel.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/chat.webp" alt="المحادثات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>المحادثات</h5>
+              <p>مساحة تواصل داخلية بين فريق التشغيل والتجار لمتابعة الاستفسارات وحالات الشحنات بدون فصلها عن النظام.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/deliver-it/shipments-alt.webp" alt="فلاتر وحالات الشحنات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>فلاتر وحالات الشحنات</h5>
+              <p>عرض آخر لإدارة الشحنات يبرز حالات مثل في الطريق والمرتجع مع التحكم في الفلاتر وإعادة الضبط والإجراءات السريعة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: EduBridge -->
+    <article class="project-card" id="edubridge">
+      <div class="project-tag">مشروع #3 • business</div>
+      <h2 class="project-title">EduBridge <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(EduBridge)</span></h2>
+      <div class="project-eyebrow">نظام إدارة المدارس المتكامل</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-1.webp" alt="EduBridge" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+        <a href="https://edubridge-dashboard-two.vercel.app/grades" target="_blank" class="btn-link btn-web">🌐 زيارة الموقع / المعاينة</a>
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Web Dashboard</span>
+        <span class="chip">Cloud Platform</span>
+        <span class="chip">Role-Based Access</span>
+        <span class="chip">Reporting</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>نظام سحابي متكامل لإدارة المدارس والعمليات التعليمية، يربط بين الإدارة، المعلمين، الطلاب، وأولياء الأمور في بيئة رقمية موحدة لتبسيط المهام اليومية ومتابعة الأداء التعليمي.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>تعدد الأنظمة وتشتت البيانات بين الإدارة المدرسية وشؤون الطلاب والمعلمين والمالية يؤدي إلى إهدار الوقت وصعوبة اتخاذ القرارات. المدارس بحاجة لنظام مركزي يربط كافة الأطراف بفعالية.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم تطوير EduBridge ليكون لوحة تحكم وتشغيل متكاملة للمدارس، تشمل إدارة الفصول، الطلاب، الحضور، الدرجات، والمصروفات، مع واجهات مخصصة تضمن سهولة الوصول للمعلومات لكل دور من أدوار النظام.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>لوحة تحكم إدارية شاملة</li>
+          <li>إدارة شؤون الطلاب والمعلمين</li>
+          <li>متابعة الحضور والانصراف والدرجات</li>
+          <li>إدارة الجداول الدراسية والامتحانات</li>
+          <li>نظام تواصل بين الإدارة وأولياء الأمور</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (واجهات نظام EduBridge)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">نظرة على واجهات النظام المختلفة التي تغطي لوحات المعلومات، إعدادات النظام، ومتابعة الأنشطة المدرسية اليومية.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-1.webp" alt="لوحة المعلومات والتقارير" loading="lazy" />
+            <div class="gallery-body">
+              <h5>لوحة المعلومات والتقارير</h5>
+              <p>واجهة تحكم تستعرض إحصائيات عامة للمدرسة ومؤشرات الأداء الأساسية.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-2.webp" alt="إدارة الإعدادات والتهيئات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>إدارة الإعدادات والتهيئات</h5>
+              <p>شاشة لضبط إعدادات النظام وتخصيص الصلاحيات وإدارة البيانات الأساسية.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-3.webp" alt="العمليات اليومية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>العمليات اليومية</h5>
+              <p>متابعة المهام اليومية والأنشطة المدرسية ضمن بيئة عمل منظمة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-4.webp" alt="إدارة الفصول والشؤون" loading="lazy" />
+            <div class="gallery-body">
+              <h5>إدارة الفصول والشؤون</h5>
+              <p>واجهة مخصصة لإدارة بيانات الفصول والطلاب والمتابعة الأكاديمية.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-5.webp" alt="شؤون الموظفين والمعلمين" loading="lazy" />
+            <div class="gallery-body">
+              <h5>شؤون الموظفين والمعلمين</h5>
+              <p>نظام لإدارة شؤون المعلمين والموظفين والجداول الزمنية.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-6.webp" alt="الفصول والمواد الدراسية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الفصول والمواد الدراسية</h5>
+              <p>دليل المقررات والمواد التعليمية والفصول والشعب الدراسية وتوزيعها.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-7.webp" alt="الجداول وحصص الانتظار" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الجداول وحصص الانتظار</h5>
+              <p>جداول حصص الفصول الأسبوعية وتكليف معلمي الانتظار لتغطية غياب زملائهم.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-8.webp" alt="السلوك والمواظبة" loading="lazy" />
+            <div class="gallery-body">
+              <h5>السلوك والمواظبة</h5>
+              <p>الملاحظات السلوكية المرصودة واعتمادها لإشعار ولي الأمر بالتدخل التربوي.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-9.webp" alt="الحضور والغياب" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الحضور والغياب</h5>
+              <p>رصد غياب الطلاب اليومي وقائمة الإنذار المبكر للمتجاوزين للحد المسموح.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/edubridge/edubridge-10.webp" alt="الدرجات والاختبارات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الدرجات والاختبارات</h5>
+              <p>كنترول الدرجات الأكاديمي، قوالب التقييم، واعتماد نتائج منتصف ونهاية الفصل.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: Z DRAFT -->
+    <article class="project-card" id="zdraft">
+      <div class="project-tag">مشروع #4 • platform</div>
+      <h2 class="project-title">Z DRAFT <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(Z DRAFT)</span></h2>
+      <div class="project-eyebrow">منصة ذكية للعقود القانونية</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/zdraft/zdraft-1.webp" alt="Z DRAFT" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+        <a href="https://zdraft.tech/wizard/rental?contractId=11" target="_blank" class="btn-link btn-web">🌐 زيارة الموقع / المعاينة</a>
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Next.js</span>
+        <span class="chip">Web Dashboard</span>
+        <span class="chip">Smart Contracts</span>
+        <span class="chip">PDF Generation</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>منصة ذكية متخصصة في إعداد وصياغة العقود القانونية الذكية ومراجعة العقود القائمة. تتيح للمستخدمين صياغة عقودهم بأنفسهم بخطوات سهلة، أو طلب إعدادها ومراجعتها بواسطة محامين مختصين، مع لوحة تحكم متكاملة لإدارة الطلبات والمدفوعات.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>صياغة العقود القانونية الموثوقة تتطلب دقة وتكلفة عالية وتستغرق وقتاً طويلاً. الحاجة لمنصة تبسط هذه العملية وتوفر قوالب معتمدة أو وصولاً سريعاً لمحامين بتجربة رقمية سهلة.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم تطوير Z DRAFT لتوفير نماذج عقود ذكية (مثل عقود الإيجار والبيع) مع معالج إلكتروني يسهل تعبئتها واعتمادها، بالإضافة لنظام لطلب التدقيق القانوني وإدارة حساب العميل بشكل رقمي بالكامل.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>صياغة عقود فورية وتلقائية</li>
+          <li>قوالب عقود إيجار وبيع معتمدة</li>
+          <li>طلب مراجعة من محام</li>
+          <li>إدارة الملف الشخصي والمدفوعات</li>
+          <li>محفظة رقمية وتتبع الطلبات</li>
+          <li>معالج (Wizard) لبناء العقد خطوة بخطوة</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (واجهات منصة Z DRAFT)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">نظرة على واجهات المنصة لتصفح الخدمات، النماذج، بناء العقود، وتقديم طلبات المراجعة للمحامين.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zdraft/zdraft-1.webp" alt="الرئيسية والخدمات الذكية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الرئيسية والخدمات الذكية</h5>
+              <p>الواجهة الرئيسية للمنصة تعرض خدمات الصياغة الذاتية والمراجعة وإعداد العقود بواسطة محامين.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zdraft/zdraft-2.webp" alt="استكشاف الخدمات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>استكشاف الخدمات</h5>
+              <p>قائمة الخدمات المتاحة وتسهيل الاختيار حسب احتياج العميل.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zdraft/zdraft-3.webp" alt="مكتبة العقود والقوالب" loading="lazy" />
+            <div class="gallery-body">
+              <h5>مكتبة العقود والقوالب</h5>
+              <p>استعراض عقود الإيجار والبيع بأنواعها المتعددة لاختيار العقد المناسب للبدء.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zdraft/zdraft-4.webp" alt="طلب مراجعة العقد" loading="lazy" />
+            <div class="gallery-body">
+              <h5>طلب مراجعة العقد</h5>
+              <p>نموذج لرفع العقود القائمة وتحديد تفاصيل المراجعة المطلوبة من المحامي المختص ودفع الرسوم.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zdraft/zdraft-5.webp" alt="معالج صياغة العقد" loading="lazy" />
+            <div class="gallery-body">
+              <h5>معالج صياغة العقد</h5>
+              <p>تجربة مستخدم تفاعلية (Wizard) لبناء وتعبئة بيانات العقد خطوة بخطوة مع المعاينة المباشرة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: Gear -->
+    <article class="project-card" id="gear">
+      <div class="project-tag">مشروع #5 • platform</div>
+      <h2 class="project-title">Gear <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(Gear)</span></h2>
+      <div class="project-eyebrow">منصة نقل وطلب رحلات متعددة الخدمات</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/gear/gear-cover.webp" alt="Gear" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Flutter</span>
+        <span class="chip">Maps & Geolocation</span>
+        <span class="chip">Trip Management</span>
+        <span class="chip">Wallet & Ratings</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>منصة نقل تجمع تطبيق الراكب وتطبيق الكابتن في تجربة واحدة، وتغطي الحجز الفوري، الرحلات داخل المدينة وخارجها، التأجير بالساعة، التوصيل، متابعة الرحلة، الأرباح والمحفظة والتقييمات.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>تطبيقات النقل لا تعتمد فقط على الخريطة؛ بل على تدفق متكامل يربط البحث عن الرحلة، التسعير، اختيار نوع الخدمة، إدارة الطلبات، سجل الرحلات، المحفظة، التقييمات وتجربة السائق والراكب بشكل متناسق وسهل الاستخدام.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم تقديم Gear كمنظومة تشغيل واضحة: تطبيق للراكب يركز على سهولة الحجز واختيار الخدمة والتسعير الشفاف ومتابعة المسار، وتطبيق للكابتن يركز على استقبال الطلبات وإدارة الرحلات والأرباح والمحفظة والحساب الشخصي، مع دعم أنواع متعددة من الرحلات والخدمات.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>تطبيق راكب وتطبيق كابتن</li>
+          <li>رحلات داخل المدينة وخارجها</li>
+          <li>تأجير بالساعة وخدمة التوصيل</li>
+          <li>خرائط وتتبع مباشر للمسار</li>
+          <li>تقدير تكلفة الرحلة قبل التأكيد</li>
+          <li>سجل الرحلات والتقييمات</li>
+          <li>الأرباح والمحفظة للسائق</li>
+          <li>إشعارات وتجربة تشغيل يومية واضحة</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (Gear من منظور الراكب والكابتن)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">هذه لقطات حقيقية من المنتج توضح كيف تم التعامل مع رحلات الراكب وعمليات الكابتن داخل نفس المنصة، من الحجز والخريطة واختيار نوع الرحلة حتى السجل والأرباح والمحفظة.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/rider-home.webp" alt="واجهة الراكب الرئيسية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>واجهة الراكب الرئيسية</h5>
+              <p>خريطة البداية مع أنواع الخدمات المتاحة والبحث السريع عن سائق.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/rider-pricing.webp" alt="اختيار المركبة والتسعير" loading="lazy" />
+            <div class="gallery-body">
+              <h5>اختيار المركبة والتسعير</h5>
+              <p>عرض الخيارات المختلفة للمركبات مع التكلفة التقديرية قبل تأكيد الطلب.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/rider-outstation.webp" alt="الرحلات الخارجية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الرحلات الخارجية</h5>
+              <p>رحلات خارج المدينة مع تحديد نوع الرحلة والوقت والتاريخ وعدد الركاب.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/rider-delivery.webp" alt="خدمة التوصيل" loading="lazy" />
+            <div class="gallery-body">
+              <h5>خدمة التوصيل</h5>
+              <p>إدخال نقاط الاستلام والوصول وإضافة وجهات ضمن تجربة التوصيل.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/rider-rental.webp" alt="التأجير بالساعة" loading="lazy" />
+            <div class="gallery-body">
+              <h5>التأجير بالساعة</h5>
+              <p>سيناريو حجز مركبة بالساعة مع تحديد نوع الإيجار والمدة ومعلومات الانطلاق والوصول.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/rider-menu.webp" alt="قائمة الراكب" loading="lazy" />
+            <div class="gallery-body">
+              <h5>قائمة الراكب</h5>
+              <p>تنقل واضح بين الرئيسية والحجوزات والحساب والإشعارات والسياسات داخل التطبيق.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/captain-live-trip.webp" alt="متابعة الرحلة للكابتن" loading="lazy" />
+            <div class="gallery-body">
+              <h5>متابعة الرحلة للكابتن</h5>
+              <p>تفاصيل الرحلة الجارية مع حالة الاتصال والمسافة والسعر وتفاصيل المشوار.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/captain-history.webp" alt="سجل الرحلات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>سجل الرحلات</h5>
+              <p>قائمة الرحلات المنفذة مع البيانات الأساسية والتكلفة والمسافة وحالة كل رحلة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/captain-earnings.webp" alt="الأرباح والملخص" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الأرباح والملخص</h5>
+              <p>لوحة تبين أرباح اليوم وإجمالي الرحلات وساعات العمل والحجوزات المقترحة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/captain-wallet.webp" alt="المحفظة والسحب" loading="lazy" />
+            <div class="gallery-body">
+              <h5>المحفظة والسحب</h5>
+              <p>متابعة الرصيد وسجل العمليات وأرباح الرحلات ورسوم الإدارة وسحب الأموال.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/captain-ratings.webp" alt="التقييمات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>التقييمات</h5>
+              <p>عرض تقييمات الرحلات السابقة بصورة تساعد الكابتن على متابعة جودة الخدمة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/gear/captain-profile.webp" alt="الملف الشخصي للكابتن" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الملف الشخصي للكابتن</h5>
+              <p>بيانات الحساب والمركبة ومعلومات الكابتن ضمن صفحة ملف واضحة ومباشرة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: BUB – Book Your Beauty -->
+    <article class="project-card" id="bub-book-your-beauty">
+      <div class="project-tag">مشروع #6 • mobile</div>
+      <h2 class="project-title">BUB – Book Your Beauty <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(BUB – Book Your Beauty)</span></h2>
+      <div class="project-eyebrow">منصة حجز صالونات وخدمات تجميل</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/bub/cover.webp" alt="BUB – Book Your Beauty" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Mobile App</span>
+        <span class="chip">Booking Platform</span>
+        <span class="chip">Service Marketplace</span>
+        <span class="chip">Payments & Scheduling</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>تطبيق ذكي لحجز صالونات التجميل وخدمات العناية الشخصية في عُمان، يجمع اكتشاف المراكز ومقارنة الخدمات والفلترة والحجز والمتابعة والدفع في تجربة واحدة، مع أدوات تشغيل لمقدمي الخدمات.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>الوصول إلى مركز تجميل مناسب غالبًا يتطلب مكالمات ورسائل ومقارنة غير منظمة بين الأسعار والمواعيد والخدمات. وفي الجهة الأخرى يحتاج مقدم الخدمة إلى إدارة الموظفين والخدمات والحجوزات بطريقة واضحة بدون الاعتماد على متابعة يدوية متفرقة.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم تصميم BUB كمنصة تربط العميل بالمركز من أول البحث والفلترة واختيار الخدمة والموعد، ثم إرسال طلب الحجز وانتظار موافقة المركز قبل الدفع. ويكمل ذلك جانب إداري لمقدمي الخدمات لإدارة الموظفين والخدمات والحجوزات من نفس المنظومة.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>اكتشاف صالونات ومراكز التجميل</li>
+          <li>بحث وفلترة حسب المنطقة والسعر والخدمة والتقييم</li>
+          <li>اختيار الخدمة والموعد المناسب</li>
+          <li>تأكيد المركز للحجز قبل الدفع</li>
+          <li>متابعة حالة الحجوزات</li>
+          <li>المفضلة ومقارنة الخيارات</li>
+          <li>إدارة الموظفين والخدمات لمقدم الخدمة</li>
+          <li>تجربة عربية واضحة وموجهة للموبايل</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (رحلة الحجز وإدارة الخدمة داخل BUB)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">اللقطات التالية توضح المنتج من الجهتين: العميل الذي يبحث ويقارن ويحجز، ومقدم الخدمة الذي يدير بياناته وخدماته وحجوزاته.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/bub/overview.webp" alt="نظرة شاملة على المنتج" loading="lazy" />
+            <div class="gallery-body">
+              <h5>نظرة شاملة على المنتج</h5>
+              <p>عرض يجمع رحلة البحث والحجوزات وإدارة الموظفين والخدمات ضمن هوية BUB.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/bub/home.webp" alt="الرئيسية واكتشاف الخدمات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الرئيسية واكتشاف الخدمات</h5>
+              <p>تصنيفات وخدمات مقترحة مع وصول سريع للبحث والحجز والمفضلة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/bub/search.webp" alt="البحث" loading="lazy" />
+            <div class="gallery-body">
+              <h5>البحث</h5>
+              <p>بحث مباشر عن صالون أو مركز تجميل أو خدمة محددة مع اختيار نطاق البحث.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/bub/results.webp" alt="نتائج البحث والفلاتر" loading="lazy" />
+            <div class="gallery-body">
+              <h5>نتائج البحث والفلاتر</h5>
+              <p>فلترة النتائج ومقارنة المراكز والخدمات للوصول إلى الاختيار الأنسب.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/bub/service-detail.webp" alt="تفاصيل الخدمة والحجز" loading="lazy" />
+            <div class="gallery-body">
+              <h5>تفاصيل الخدمة والحجز</h5>
+              <p>تفاصيل الخدمة والموقع والحالة والتقييم مع دعوة واضحة لإرسال طلب الحجز.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/bub/favorites.webp" alt="المفضلة" loading="lazy" />
+            <div class="gallery-body">
+              <h5>المفضلة</h5>
+              <p>حفظ الخدمات والمراكز المفضلة للرجوع إليها والمقارنة بينها بسهولة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/bub/provider-dashboard.webp" alt="لوحة مقدم الخدمة" loading="lazy" />
+            <div class="gallery-body">
+              <h5>لوحة مقدم الخدمة</h5>
+              <p>إدارة المكان والخدمات والموظفين من جانب مقدم الخدمة ضمن نفس المنصة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: ماي فني -->
+    <article class="project-card" id="my-fanni">
+      <div class="project-tag">مشروع #7 • mobile</div>
+      <h2 class="project-title">ماي فني <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(My Fanni)</span></h2>
+      <div class="project-eyebrow">منصة حجز خدمات صيانة وفنيين</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/my-fanni/cover.webp" alt="ماي فني" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Mobile App</span>
+        <span class="chip">Field Services</span>
+        <span class="chip">Booking</span>
+        <span class="chip">Real-time Tracking</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>منصة تساعد المستخدم على الوصول إلى فنيين لخدمات الصيانة المختلفة، مع حجز الموعد المناسب، متابعة الخدمة، الاطلاع على التقييمات، والتحقق من بيانات الفنيين لتقديم تجربة أكثر ثقة وتنظيمًا.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>طلب خدمات الصيانة غالبًا يبدأ بمشكلة ثقة: من الفني المناسب؟ هل سيصل في الموعد؟ وما مستوى جودة عمله؟ كما أن الاعتماد على المكالمات فقط يجعل الحجز والمتابعة والتقييم غير منظمين.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>ماي فني يجمع رحلة الخدمة في تطبيق واحد: اختيار نوع الصيانة، تحديد الموعد، التعامل مع فنيين موثقين، متابعة الفني والخدمة، ثم الاستفادة من التقييمات والمراجعات. ويضيف النظام عناصر ثقة مثل الكفالة وخيارات الدفع الآمنة وخدمة العملاء.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>حجز المواعيد حسب التاريخ والوقت</li>
+          <li>تتبع الفني والخدمة في الوقت الفعلي</li>
+          <li>تقييمات ومراجعات قبل الحجز</li>
+          <li>توثيق بيانات وخبرات الفنيين</li>
+          <li>كفالة على الخدمات</li>
+          <li>خيارات دفع آمنة</li>
+          <li>خدمات تكييف وسباكة وكهرباء وصيانة عامة</li>
+          <li>خدمة عملاء ودعم داخل رحلة الخدمة</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (خدمات الصيانة والثقة داخل ماي فني)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">الواجهات توضح تصنيفات الخدمات، ضمانات المنصة، والتنقل داخل تجربة حجز الصيانة، مع هوية تركوازية وصفراء واضحة.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/my-fanni/home-menu.webp" alt="الرئيسية وقائمة التنقل" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الرئيسية وقائمة التنقل</h5>
+              <p>الخدمات الأساسية مثل التكييف والسباكة مع وصول مباشر للطلبات والمواعيد وخدمة العملاء.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/my-fanni/guarantee.webp" alt="ضمان ماي فني" loading="lazy" />
+            <div class="gallery-body">
+              <h5>ضمان ماي فني</h5>
+              <p>شرح عناصر الثقة مثل الفنيين المعتمدين، كفالة الخدمات، الدفع الآمن وخدمة العملاء.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/my-fanni/hvac.webp" alt="خدمات التكييف والتهوية" loading="lazy" />
+            <div class="gallery-body">
+              <h5>خدمات التكييف والتهوية</h5>
+              <p>تقسيم واضح لخدمات التكييف المركزي والسبليت والتهوية وعقود الصيانة السنوية.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/my-fanni/brand.webp" alt="هوية ماي فني" loading="lazy" />
+            <div class="gallery-body">
+              <h5>هوية ماي فني</h5>
+              <p>هوية بصرية مباشرة تربط شخصية الفني بألوان الأصفر والأسود لخدمات الصيانة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: Zone -->
+    <article class="project-card" id="zone-services">
+      <div class="project-tag">مشروع #8 • mobile</div>
+      <h2 class="project-title">Zone <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(Zone)</span></h2>
+      <div class="project-eyebrow">سوق خدمات وحجوزات متعددة المجالات</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/zone/cover.webp" alt="Zone" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Mobile App</span>
+        <span class="chip">Service Marketplace</span>
+        <span class="chip">Bookings</span>
+        <span class="chip">Scheduling</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>منصة رقمية تعمل كوسيط بين المستخدمين ومقدمي الخدمات، وتجمع خدمات مثل قاعات الأفراح ومراكز التجميل والصيانة وغيرها في مكان واحد لاكتشاف الخيارات والتواصل معها وحجزها بسهولة.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>تعدد مقدمي الخدمات واختلاف طرق التواصل والحجز يجعل البحث عن خيار مناسب عملية تستغرق وقتًا، كما يحتاج مقدم الخدمة إلى طريقة موحدة لإدارة خدماته وحجوزاته ومواعيده بدل الاعتماد على أدوات منفصلة.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم بناء Zone كطبقة وسيطة منظمة بين الطرفين: المستخدم يستكشف الخدمات ويحجز ويتابع حالته، بينما يحصل مقدم الخدمة على لوحة تحكم لإدارة الخدمات والجداول والمواعيد والحجوزات والتواصل من داخل نفس المنصة.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>اكتشاف خدمات من مجالات متعددة</li>
+          <li>حجوزات ومتابعة حالة الطلب</li>
+          <li>إدارة المواعيد والجداول</li>
+          <li>مفضلة للوصول السريع للخدمات</li>
+          <li>لوحة تحكم لمقدم الخدمة</li>
+          <li>إدارة الخدمات والحجوزات من مكان واحد</li>
+          <li>دعم تصنيفات مثل المناسبات والتجميل والصيانة</li>
+          <li>تجربة عربية مباشرة على الموبايل</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (من اكتشاف الخدمة إلى إدارة الحجز)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">تعرض هذه اللقطات كيف يخدم Zone المستخدم ومقدم الخدمة معًا، من تصفح التصنيفات والحجوزات وحتى ضبط الجداول ولوحة التحكم.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zone/category.webp" alt="تصنيفات الخدمات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>تصنيفات الخدمات</h5>
+              <p>تجميع الخدمات في أقسام واضحة لتسهيل الوصول إلى النوع المطلوب بسرعة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zone/bookings.webp" alt="حجوزاتي" loading="lazy" />
+            <div class="gallery-body">
+              <h5>حجوزاتي</h5>
+              <p>سجل للحجوزات مع حالات القبول والرفض وتفاصيل كل طلب.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zone/schedule.webp" alt="إدارة المواعيد" loading="lazy" />
+            <div class="gallery-body">
+              <h5>إدارة المواعيد</h5>
+              <p>تعديل جدول المكان أو الخدمة، أيام العطلات، ساعات العمل وساعات الراحة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zone/more.webp" alt="لوحة تحكم الخدمات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>لوحة تحكم الخدمات</h5>
+              <p>وصول مباشر لإدارة الخدمات والحجوزات والحساب والإعدادات من شاشة واحدة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/zone/logo.webp" alt="هوية Zone" loading="lazy" />
+            <div class="gallery-body">
+              <h5>هوية Zone</h5>
+              <p>الهوية البصرية للتطبيق المبنية حول حرف Z ودرجات البني والبرونزي.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT: MedSkAi -->
+    <article class="project-card" id="medskai">
+      <div class="project-tag">مشروع #9 • mobile</div>
+      <h2 class="project-title">MedSkAi <span style="font-size:18px; font-weight:500; color:var(--text-muted);">(MedSkAi)</span></h2>
+      <div class="project-eyebrow">منصة تعليمية ومجتمع مهني للعلوم الطبية والصحية التطبيقية</div>
+
+      <div class="cover-container">
+        <img src="https://company-potofolio-tog3.vercel.app/projects/medskai/cover.webp" alt="MedSkAi" loading="lazy" />
+      </div>
+
+      <div class="links-bar">
+        <a href="https://play.google.com/store/apps/details?id=soft.tadrees.ahmed_alazhry" target="_blank" class="btn-link btn-web">🌐 زيارة الموقع / المعاينة</a>
+      </div>
+
+      <div class="tech-chips">
+        <span class="chip">Flutter</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Firebase</span>
+        <span class="chip">State Management</span>
+        <span class="chip">PDF Certificates</span>
+        <span class="chip">Media Streaming</span>
+      </div>
+
+      <div class="content-section">
+        <h4>📋 نبذة عن المشروع</h4>
+        <p>منصة رقمية مخصصة لطلاب وخريجي وممارسي العلوم الطبية والصحية التطبيقية في مصر والشرق الأوسط، تجمع بين الدورات التدريبية التخصصية، مجتمعات التخصص المباشرة، شهادات الكفاءة الموثقة، وفرص التوظيف والتدريب العملي.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>🎯 التحدي (Challenge)</h4>
+        <p>تنشأ في مجال العلوم الطبية التطبيقية فجوة بين الدراسة النظرية والتطبيق الكلينيكي والميداني في المستشفيات والمعامل. ويواجه الطلاب والممارسون صعوبة في الوصول لمحتوى عملي متخصص، الحصول على شهادات مرتبطة بتقييمات حقيقية، وبناء ملف شخصي يبرز كفاءاتهم لدى المؤسسات الطبية وسوق العمل.</p>
+      </div>
+
+      <div class="content-section">
+        <h4>💡 الحل المنفّذ (Solution)</h4>
+        <p>تم تطوير تطبيق MedSkAi لتوفير بيئة تعليمية هاتفية متكاملة تشمل دورات تخصصية يقدمها خبراء وممارسون في 12+ تخصصاً طبياً (مثل الأشعة، التخدير والرعاية المركزة، المختبرات، الأجهزة الطبية)، مع تقييمات واختبارات قياس الكفاءة، وشهادات موثقة، ومجتمعات لمناقشة الحالات الكلينيكية، ومحرك وظائف وتدريب يعتمد عليه أكثر من 1,200 طالب وخريج عبر 17+ جامعة.</p>
+      </div>
+      <div class="content-section">
+        <h4>✨ أبرز الميزات والوظائف</h4>
+        <ul class="feature-list">
+          <li>دورات تدريبية عملية في 12+ تخصصاً طبياً وصحياً تطبيقياً</li>
+          <li>نظام اختبارات وتدريبات عملية مرتبطة بالشهادات الموثقة</li>
+          <li>مجتمعات تخصصية لمناقشة الحالات الكلينيكية وتبادل الخبرات</li>
+          <li>بناء ملف شخصي وسيرة ذاتية موثقة للممارسين والطلاب</li>
+          <li>ربط الخريجين بفرص التوظيف والتدريب والورش العمل (MedSkAi Careers)</li>
+          <li>مدونة طبية متجددة لمتابعة أحدث التقنيات والتطورات الطبية</li>
+          <li>دعم تحميل الدروس والتعلم بدون إنترنت (Offline Access)</li>
+          <li>تجربة تطبيق موبايل متجاوبة وسلسة للأندرويد والأيفون</li>
+        </ul>
+      </div>
+      <div class="content-section">
+        <h4>📸 معرض الشاشات (واجهات تطبيق MedSkAi وتجربة التعلم والتشغيل)</h4>
+        <p style="font-style: italic; margin-bottom: 12px;">لقطات حقيقية من داخل التطبيق تظهر الشاشة الرئيسية وتصنيفات التخصصات الطبية، تصفح الدورات والأسعار، متابعة الكورسات المسجلة والإنجاز، الملف الشخصي وإدارة الإعدادات والشهادات.</p>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/medskai/home.webp" alt="الرئيسية واكتشاف التخصصات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الرئيسية واكتشاف التخصصات</h5>
+              <p>الشاشة الرئيسية للتطبيق تتيح اكتشاف التخصصات الطبية المختلفة مثل الأشعة، الصحة العامة، والمهارات الطبية، بالإضافة للدورات الأكثر إقبالاً.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/medskai/courses.webp" alt="كتالوج الدورات والتفاصيل" loading="lazy" />
+            <div class="gallery-body">
+              <h5>كتالوج الدورات والتفاصيل</h5>
+              <p>استعراض الدورات المتاحة مع الفلاتر، التخصصات، المحاضرين، التسعير وإمكانية البدء المباشر في الدورة.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/medskai/my-course.webp" alt="متابعة التعلم والدورات المسجلة" loading="lazy" />
+            <div class="gallery-body">
+              <h5>متابعة التعلم والدورات المسجلة</h5>
+              <p>متابعة نسبة إنجاز الدورات المسجلة، حالة التقدم، الدروس المكتملة ومدة الاشتراك.</p>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://company-potofolio-tog3.vercel.app/projects/medskai/profile.webp" alt="الملف الشخصي والإعدادات" loading="lazy" />
+            <div class="gallery-body">
+              <h5>الملف الشخصي والإعدادات</h5>
+              <p>إدارة الملف الشخصي، الوصول إلى الشهادات المكتسبة، المشتريات، المجموعات التخصصية والدروس المحملة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+  
+  <footer style="text-align: center; color: var(--text-muted); font-size: 13px; padding-top: 30px; border-top: 1px solid var(--card-border);">
+    © 2026 Codely Studio — وثيقة استعراض الأعمال البرمجية
+  </footer>
+</div>
+
+</body>
+</html>
