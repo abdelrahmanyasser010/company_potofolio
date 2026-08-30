@@ -82,7 +82,7 @@ export default function AboutPage() {
               <span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan" />
               ABOUT CODELY
             </div>
-            <h1 className="mt-6 max-w-4xl text-balance text-4xl font-extrabold leading-[1.14] text-white md:text-6xl">
+            <h1 className="mt-6 max-w-4xl text-balance text-3xl font-extrabold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
               {t(
                 "مجموعة متكاملة من المطورين، بخبرات مجمعة تتجاوز 15 عامًا.",
                 "A complete software team with more than 15 years of combined experience."
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 <Globe2 className="h-4 w-4" />
                 {t("خبرة إقليمية", "Regional experience")}
               </div>
-              <h2 className="mt-5 text-3xl font-extrabold leading-normal text-white md:text-5xl">
+              <h2 className="mt-5 text-2xl font-extrabold leading-[1.38] text-white sm:text-3xl md:text-4xl md:leading-[1.35]">
                 {t("نفهم اختلاف السوق، وليس فقط اختلاف اللغة.", "We account for market differences — not only language.")}
               </h2>
             </motion.div>

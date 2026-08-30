@@ -28,7 +28,7 @@ export function FeaturedProject() {
                 {t("مشروع مختار", "Featured work")}
               </div>
 
-              <h2 className="mt-5 text-4xl font-extrabold leading-normal text-white md:text-5xl">
+              <h2 className="mt-5 text-3xl font-extrabold leading-[1.38] text-white sm:text-4xl lg:text-[44px] md:leading-[1.35] lg:leading-[1.32]">
                 {t(project.title_ar, project.title_en)}
               </h2>
 

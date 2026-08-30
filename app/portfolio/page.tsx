@@ -106,7 +106,7 @@ export default function PortfolioPage() {
               <span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan" />
               {t("أعمال Codely", "Codely work")}
             </div>
-            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-normal text-white md:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-balance text-3xl font-extrabold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
               {t("منتجات حقيقية. وتفاصيل تشغيل واقعية.", "Real products. Real operational detail.")}
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300">

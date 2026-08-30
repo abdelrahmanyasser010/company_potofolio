@@ -65,7 +65,7 @@ export default function ProjectCaseStudyPage() {
                 />
               </div>
               <div className="border-t border-white/10 p-6 md:p-8">
-                <h3 className="text-xl font-black text-white">
+                <h3 className="text-xl font-extrabold text-white">
                   {t(activeImage.title_ar, activeImage.title_en)}
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-slate-300">
@@ -97,7 +97,7 @@ export default function ProjectCaseStudyPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-codely-cyan" />
                 {t(project.eyebrow_ar, project.eyebrow_en)}
               </div>
-              <h1 className="mt-5 text-5xl font-black text-white md:text-7xl">
+              <h1 className="mt-5 text-3xl font-extrabold leading-[1.35] text-white sm:text-4xl md:text-6xl md:leading-[1.28]">
                 {t(project.title_ar, project.title_en)}
               </h1>
               <p className="mt-6 text-base leading-8 text-slate-300">
@@ -120,7 +120,7 @@ export default function ProjectCaseStudyPage() {
                   href={project.website}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full border border-codely-cyan/40 bg-codely-cyan/15 px-6 py-3.5 text-xs font-black text-codely-cyan shadow-[0_4px_20px_rgba(46,220,255,0.15)] transition-all hover:border-codely-cyan/70 hover:bg-codely-cyan/25"
+                  className="mt-7 inline-flex items-center gap-2 rounded-full border border-codely-cyan/40 bg-codely-cyan/15 px-6 py-3.5 text-xs font-extrabold text-codely-cyan shadow-[0_4px_20px_rgba(46,220,255,0.15)] transition-all hover:border-codely-cyan/70 hover:bg-codely-cyan/25"
                 >
                   <ExternalLink className="h-4 w-4" />
                   {t("زيارة الموقع الرسمي / المعاينة", "Visit official site / Demo")}
@@ -142,11 +142,11 @@ export default function ProjectCaseStudyPage() {
 
       <section className="section-space">
         <div className="container-codely grid gap-12 lg:grid-cols-[.48fr_1fr]">
-          <div className="text-xs font-black uppercase tracking-[.18em] text-codely-cyan">
+          <div className="text-xs font-extrabold uppercase tracking-[.18em] text-codely-cyan">
             01 / {t("المشكلة", "The challenge")}
           </div>
           <div>
-            <h2 className="text-3xl font-black text-white md:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-[1.38] text-white sm:text-3xl md:text-4xl md:leading-[1.35]">
               {t("ما الذي كان يحتاج حلًا؟", "What needed to be solved?")}
             </h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">
@@ -158,11 +158,11 @@ export default function ProjectCaseStudyPage() {
 
       <section className="section-space border-y border-white/10 bg-[#060919]">
         <div className="container-codely grid gap-12 lg:grid-cols-[.48fr_1fr]">
-          <div className="text-xs font-black uppercase tracking-[.18em] text-codely-cyan">
+          <div className="text-xs font-extrabold uppercase tracking-[.18em] text-codely-cyan">
             02 / {t("الحل", "The approach")}
           </div>
           <div>
-            <h2 className="text-3xl font-black text-white md:text-5xl">
+            <h2 className="text-2xl font-extrabold leading-[1.38] text-white sm:text-3xl md:text-4xl md:leading-[1.35]">
               {t("كيف تم تشكيل المنتج؟", "How was the product shaped?")}
             </h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300">
@@ -189,11 +189,11 @@ export default function ProjectCaseStudyPage() {
         <section className="section-space overflow-hidden">
           <div className="container-codely">
             <div className="grid gap-10 lg:grid-cols-[.48fr_1fr]">
-              <div className="text-xs font-black uppercase tracking-[.18em] text-codely-cyan">
+              <div className="text-xs font-extrabold uppercase tracking-[.18em] text-codely-cyan">
                 03 / {t("داخل المنتج", "Inside the product")}
               </div>
               <div>
-                <h2 className="max-w-3xl text-3xl font-black text-white md:text-5xl">
+                <h2 className="max-w-3xl text-2xl font-extrabold leading-[1.38] text-white sm:text-3xl md:text-4xl md:leading-[1.35]">
                   {t(project.galleryTitle_ar ?? "لقطات من المنتج", project.galleryTitle_en ?? "Product views")}
                 </h2>
                 {(project.galleryIntro_ar || project.galleryIntro_en) && (
@@ -241,7 +241,7 @@ export default function ProjectCaseStudyPage() {
                     </div>
                   </div>
                   <figcaption className="grid gap-2 border-t border-white/8 p-5 md:grid-cols-[.45fr_1fr] md:gap-6 md:p-6">
-                    <div className="text-sm font-black text-white transition-colors group-hover:text-cyan-200">
+                    <div className="text-sm font-extrabold text-white transition-colors group-hover:text-cyan-200">
                       {t(item.title_ar, item.title_en)}
                     </div>
                     <p className="text-xs leading-6 text-slate-400">
@@ -268,7 +268,7 @@ export default function ProjectCaseStudyPage() {
               {t("مشروع مشابه؟", "Building something similar?")}
             </div>
             <div className="mt-4 flex flex-col justify-between gap-7 md:flex-row md:items-end">
-              <h2 className="max-w-2xl text-3xl font-black text-white md:text-5xl">
+              <h2 className="max-w-2xl text-2xl font-extrabold leading-[1.38] text-white sm:text-3xl md:text-4xl md:leading-[1.35]">
                 {t(
                   "احكِ لنا عن التشغيل والمشكلة، ونبدأ من هناك.",
                   "Tell us about the workflow and the problem. We will start there."
@@ -276,7 +276,7 @@ export default function ProjectCaseStudyPage() {
               </h2>
               <Link
                 href="/contact"
-                className="shrink-0 rounded-full bg-white px-7 py-3.5 text-sm font-black text-[#070b1f] shadow-lg transition-transform duration-200 hover:scale-105"
+                className="shrink-0 rounded-full bg-white px-7 py-3.5 text-sm font-extrabold text-[#070b1f] shadow-lg transition-transform duration-200 hover:scale-105"
               >
                 {t("ابدأ مشروعًا", "Start a project")}
               </Link>

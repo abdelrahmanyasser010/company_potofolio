@@ -52,13 +52,23 @@ html[dir="rtl"] body {
 .soft-line { border-color: var(--line); }
 
 .display-title {
-  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
-  line-height: 1.15;
+  font-size: clamp(2.3rem, 4.2vw, 4.2rem);
+  line-height: 1.35;
   font-weight: 800;
   letter-spacing: -0.035em;
   text-wrap: balance;
 }
-html[dir="rtl"] .display-title { letter-spacing: -0.01em; line-height: 1.25; }
+html[dir="rtl"] .display-title { letter-spacing: -0.01em; line-height: 1.38; }
+
+/* Global typography line-height protection for Arabic fonts */
+h1, h2, h3 {
+  line-height: 1.35;
+}
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+  line-height: 1.38;
+}
 
 .grid-bg {
   background-image:

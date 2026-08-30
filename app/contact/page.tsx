@@ -76,7 +76,7 @@ export default function ContactPage() {
               <span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan" />
               {t("ابدأ مشروعك", "Start a project")}
             </div>
-            <h1 className="mt-6 text-balance text-4xl font-extrabold leading-[1.12] text-white md:text-6xl">
+            <h1 className="mt-6 text-balance text-3xl font-extrabold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
               {t("شاركنا متطلبات مشروعك، وسنحدد معك الخطة الهندسية والتنفيذ.", "Share your project requirements, and we will plan the execution together.")}
             </h1>
             <p className="mt-6 max-w-3xl text-[15px] leading-8 text-slate-300 md:text-[17px]">

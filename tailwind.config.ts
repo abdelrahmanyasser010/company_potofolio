@@ -5,6 +5,19 @@ const config: Config = {
   content: ["./components/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      fontSize: {
+        "3xl": ["1.875rem", { lineHeight: "1.4" }],
+        "4xl": ["2.25rem", { lineHeight: "1.38" }],
+        "5xl": ["3rem", { lineHeight: "1.35" }],
+        "6xl": ["3.75rem", { lineHeight: "1.3" }],
+        "7xl": ["4.5rem", { lineHeight: "1.25" }],
+      },
+      lineHeight: {
+        tight: "1.3",
+        snug: "1.4",
+        normal: "1.55",
+        relaxed: "1.7",
+      },
       colors: {
         codely: {
           ink: "#050817",
