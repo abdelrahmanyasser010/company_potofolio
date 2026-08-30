@@ -33,7 +33,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-extrabold uppercase tracking-[.18em] text-slate-500">
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-[.18em] text-slate-500">
               {t("استكشف", "Explore")}
             </h3>
             <div className="space-y-3 text-sm text-slate-300">
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-extrabold uppercase tracking-[.18em] text-slate-500">
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-[.18em] text-slate-500">
               {t("تواصل", "Contact")}
             </h3>
             <div className="space-y-3 text-sm">
@@ -89,7 +89,7 @@ export function Footer() {
 
               <Link
                 href="/contact"
-                className="group mt-5 inline-flex items-center gap-2 font-extrabold text-white transition-colors hover:text-codely-cyan"
+                className="group mt-5 inline-flex items-center gap-2 font-bold text-white transition-colors hover:text-codely-cyan"
               >
                 <span>{t("احكِ لنا عن مشروعك", "Tell us about your project")}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

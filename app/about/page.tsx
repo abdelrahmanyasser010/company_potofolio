@@ -82,7 +82,7 @@ export default function AboutPage() {
               <span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan" />
               ABOUT CODELY
             </div>
-            <h1 className="mt-6 max-w-4xl text-balance text-3xl font-extrabold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
+            <h1 className="mt-6 max-w-4xl text-balance text-3xl font-bold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
               {t(
                 "مجموعة متكاملة من المطورين، بخبرات مجمعة تتجاوز 15 عامًا.",
                 "A complete software team with more than 15 years of combined experience."
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 <Globe2 className="h-4 w-4" />
                 {t("خبرة إقليمية", "Regional experience")}
               </div>
-              <h2 className="mt-5 text-2xl font-extrabold leading-[1.38] text-white sm:text-3xl md:text-4xl md:leading-[1.35]">
+              <h2 className="mt-5 text-2xl font-bold leading-[1.38] text-white sm:text-3xl md:text-4xl md:leading-[1.35]">
                 {t("نفهم اختلاف السوق، وليس فقط اختلاف اللغة.", "We account for market differences — not only language.")}
               </h2>
             </motion.div>
@@ -245,7 +245,7 @@ export default function AboutPage() {
                 <div className="mb-6 grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/[0.03] text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-400/30 group-hover:bg-cyan-400/10">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-4 text-xl font-extrabold text-white transition-colors group-hover:text-cyan-200">
+                <h3 className="mt-4 text-xl font-bold text-white transition-colors group-hover:text-cyan-200">
                   {a}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-400">

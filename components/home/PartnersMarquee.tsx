@@ -14,7 +14,7 @@ export function PartnersMarquee() {
   ];
 
   return (
-    <section className="section-space border-t border-white/10 bg-[#060919]">
+    <section className="section-space relative overflow-hidden bg-gradient-to-b from-transparent via-[#060919]/50 to-transparent">
       <div className="container-codely">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,8 +30,8 @@ export function PartnersMarquee() {
           />
         </motion.div>
 
-        <div className="relative mt-14 grid gap-4 lg:grid-cols-4">
-          <div className="absolute left-[8%] right-[8%] top-[25px] hidden h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent lg:block" />
+        <div className="relative mt-14 grid gap-5 lg:grid-cols-4">
+          <div className="absolute left-[8%] right-[8%] top-[25px] hidden h-px bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent lg:block" />
 
           {steps.map(([n, a, b], i) => (
             <motion.div
@@ -41,15 +41,15 @@ export function PartnersMarquee() {
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: i * 0.12 }}
               whileHover={{ y: -5 }}
-              className="group relative rounded-2xl border border-white/8 bg-white/[.025] p-6 transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/[0.045] hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)]"
+              className="group relative rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.035] to-white/[0.01] p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/35 hover:shadow-[0_16px_45px_rgba(46,220,255,0.09)]"
             >
-              <span className="relative z-10 grid h-12 w-12 place-items-center rounded-full border border-cyan-300/25 bg-[#071027] text-xs font-extrabold text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-300 group-hover:shadow-[0_0_20px_rgba(46,220,255,0.3)]">
+              <span className="relative z-10 grid h-11 w-11 place-items-center rounded-full border border-cyan-300/30 bg-[#071027] text-xs font-bold text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:border-cyan-300 group-hover:shadow-[0_0_20px_rgba(46,220,255,0.35)]">
                 {n}
               </span>
-              <h3 className="mt-7 text-lg font-extrabold text-white transition-colors duration-200 group-hover:text-cyan-200">
+              <h3 className="mt-6 text-base font-bold text-white transition-colors duration-200 group-hover:text-cyan-200">
                 {a}
               </h3>
-              <p className="mt-2 text-xs leading-6 text-slate-400">
+              <p className="mt-2 text-xs leading-relaxed text-slate-400">
                 {b}
               </p>
             </motion.div>

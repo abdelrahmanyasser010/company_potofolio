@@ -26,14 +26,14 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="border-y border-white/10 bg-white/[.015] backdrop-blur-sm">
+    <section className="relative py-12 md:py-16">
       <div className="container-codely">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.1 }}
-          className="grid gap-0 py-3 md:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
         >
           {items.map(([a, b], i) => (
             <motion.div
@@ -42,17 +42,16 @@ export function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`group px-6 py-8 transition-colors duration-300 hover:bg-white/[0.025] ${
-                i > 0 ? "border-t border-white/8 md:border-t-0 md:border-s" : ""
-              }`}
+              whileHover={{ y: -4 }}
+              className="group relative rounded-2xl border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/30 hover:shadow-[0_12px_36px_rgba(46,220,255,0.08)]"
             >
-              <div className="mb-4 grid h-9 w-9 place-items-center rounded-xl bg-cyan-400/[0.08] text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-400/[0.15] group-hover:shadow-[0_0_15px_rgba(46,220,255,0.25)]">
+              <div className="mb-4 grid h-10 w-10 place-items-center rounded-xl bg-cyan-400/[0.1] text-codely-cyan transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-400/[0.2] group-hover:shadow-[0_0_20px_rgba(46,220,255,0.35)]">
                 <CheckCircle2 className="h-4 w-4" />
               </div>
-              <h3 className="text-sm font-extrabold text-white transition-colors duration-200 group-hover:text-cyan-200">
+              <h3 className="text-base font-bold text-white transition-colors duration-200 group-hover:text-cyan-200">
                 {a}
               </h3>
-              <p className="mt-2 text-xs leading-6 text-slate-400">
+              <p className="mt-2 text-xs leading-relaxed text-slate-400">
                 {b}
               </p>
             </motion.div>

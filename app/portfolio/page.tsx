@@ -43,10 +43,10 @@ const ProjectCard = ({ p, isFeatured, index }: { p: PortfolioItem; isFeatured: b
                 : "order-2 flex-1"
             } p-7 md:p-9 flex flex-col justify-center`}
           >
-            <div className="text-[10px] font-extrabold uppercase tracking-[.18em] text-slate-400">
+            <div className="text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">
               {t(p.eyebrow_ar, p.eyebrow_en)}
             </div>
-            <h2 className="mt-3 text-2xl font-extrabold text-white transition-colors group-hover:text-cyan-200 md:text-3xl">
+            <h2 className="mt-3 text-2xl font-bold text-white transition-colors group-hover:text-cyan-200 md:text-3xl">
               {t(p.title_ar, p.title_en)}
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-400 line-clamp-3">
@@ -62,7 +62,7 @@ const ProjectCard = ({ p, isFeatured, index }: { p: PortfolioItem; isFeatured: b
                 </span>
               ))}
             </div>
-            <div className="mt-7 flex items-center gap-2 text-xs font-extrabold text-white transition-colors group-hover:text-codely-cyan mt-auto pt-4">
+            <div className="mt-7 flex items-center gap-2 text-xs font-bold text-white transition-colors group-hover:text-codely-cyan mt-auto pt-4">
               <span>{t("عرض دراسة الحالة", "Case study")}</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </div>
@@ -106,7 +106,7 @@ export default function PortfolioPage() {
               <span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan" />
               {t("أعمال Codely", "Codely work")}
             </div>
-            <h1 className="mt-6 text-balance text-3xl font-extrabold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
+            <h1 className="mt-6 text-balance text-3xl font-bold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
               {t("منتجات حقيقية. وتفاصيل تشغيل واقعية.", "Real products. Real operational detail.")}
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300">
@@ -175,7 +175,7 @@ export default function PortfolioPage() {
                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 text-white shadow-lg">
                           <CatIcon className="h-6 w-6" />
                         </div>
-                        <h2 className="text-3xl font-extrabold text-white">{t(catInfo.label_ar, catInfo.label_en)}</h2>
+                        <h2 className="text-3xl font-bold text-white">{t(catInfo.label_ar, catInfo.label_en)}</h2>
                       </div>
                       <div className="grid gap-7 lg:grid-cols-2">
                         {catProjects.map((p, i) => (

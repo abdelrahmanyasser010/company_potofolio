@@ -86,7 +86,7 @@ export function Navbar() {
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
             <Link
               href="/contact"
-              className="focus-ring inline-flex h-10 items-center gap-2 rounded-full bg-white px-5 text-[13px] font-extrabold text-[#070b1f] shadow-[0_4px_20px_rgba(255,255,255,.15)] transition hover:shadow-[0_8px_30px_rgba(255,255,255,.25)]"
+              className="focus-ring inline-flex h-10 items-center gap-2 rounded-full bg-white px-5 text-[13px] font-bold text-[#070b1f] shadow-[0_4px_20px_rgba(255,255,255,.15)] transition hover:shadow-[0_8px_30px_rgba(255,255,255,.25)]"
             >
               {t("ابدأ مشروعك", "Start a project")} <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -138,7 +138,7 @@ export function Navbar() {
               })}
               <Link
                 href="/contact"
-                className="mt-2 rounded-2xl bg-white px-4 py-3.5 text-center text-sm font-extrabold text-[#070b1f] shadow-lg"
+                className="mt-2 rounded-2xl bg-white px-4 py-3.5 text-center text-sm font-bold text-[#070b1f] shadow-lg"
               >
                 {t("ابدأ مشروعك", "Start a project")}
               </Link>

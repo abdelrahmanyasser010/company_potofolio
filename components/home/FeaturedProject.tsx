@@ -28,7 +28,7 @@ export function FeaturedProject() {
                 {t("مشروع مختار", "Featured work")}
               </div>
 
-              <h2 className="mt-5 text-3xl font-extrabold leading-[1.38] text-white sm:text-4xl lg:text-[44px] md:leading-[1.35] lg:leading-[1.32]">
+              <h2 className="mt-5 text-3xl font-bold leading-[1.38] text-white sm:text-4xl lg:text-[44px] md:leading-[1.35] lg:leading-[1.32]">
                 {t(project.title_ar, project.title_en)}
               </h2>
 
@@ -53,7 +53,7 @@ export function FeaturedProject() {
 
               <Link
                 href={`/portfolio/${project.slug}`}
-                className="group/link mt-8 inline-flex w-fit items-center gap-2 text-sm font-extrabold text-white transition-colors hover:text-codely-cyan"
+                className="group/link mt-8 inline-flex w-fit items-center gap-2 text-sm font-bold text-white transition-colors hover:text-codely-cyan"
               >
                 <span>{t("شاهد دراسة المشروع", "View case study")}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
