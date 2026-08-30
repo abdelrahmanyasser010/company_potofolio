@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { useLanguage } from "@/lib/context/LanguageContext";
@@ -16,16 +17,16 @@ export function ServicesOverview() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12 },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.55, ease: "easeOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
@@ -49,53 +50,79 @@ export function ServicesOverview() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((p) => (
             <motion.div
               key={p.slug}
               variants={cardVariants}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -5 }}
               transition={{ duration: 0.25 }}
               className="h-full"
             >
               <Link
                 href={`/portfolio/${p.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-[#0e1638]/70 via-[#0a0f2b]/80 to-[#070b20]/95 backdrop-blur-md transition-all duration-300 hover:border-cyan-400/35 hover:shadow-[0_20px_50px_rgba(46,220,255,0.12)]"
+                className="group relative block h-[310px] w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070b1e] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(46,220,255,0.18)]"
               >
-                <div className="overflow-hidden">
-                  <ProjectVisual project={p} compact />
+                {/* Full Bleed Image */}
+                <div className="absolute inset-0 overflow-hidden">
+                  {p.coverImage ? (
+                    <Image
+                      src={p.coverImage}
+                      alt={p.title_en}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+                    />
+                  ) : (
+                    <ProjectVisual project={p} compact />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060a1d] via-[#060a1d]/40 to-transparent opacity-85 transition-opacity duration-300 group-hover:opacity-95" />
                 </div>
-                <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
-                  <div>
-                    <div className="text-[11px] font-bold text-cyan-300/80">
-                      {t(p.eyebrow_ar, p.eyebrow_en)}
-                    </div>
-                    <h3 className="mt-2 text-xl font-bold text-white transition-colors duration-200 group-hover:text-cyan-200">
-                      {t(p.title_ar, p.title_en)}
-                    </h3>
-                    <p className="mt-2.5 line-clamp-2 text-xs leading-relaxed text-slate-300">
-                      {t(p.summary_ar, p.summary_en)}
-                    </p>
+
+                {/* Permanent Category Badge */}
+                <div className="absolute top-3.5 end-3.5 z-10 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-[10px] font-semibold text-cyan-200 backdrop-blur-md transition-all duration-300 group-hover:border-cyan-400/40">
+                  {p.category === "platform" ? t("منصة ويب", "Web Platform") : p.category === "business" ? t("نظام أعمال", "Business System") : t("تطبيق جوال", "Mobile App")}
+                </div>
+
+                {/* Default Title Strip at Bottom */}
+                <div className="absolute inset-x-0 bottom-0 z-10 p-4 transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
+                  <div className="text-[10px] font-bold text-cyan-300/80">
+                    {t(p.eyebrow_ar, p.eyebrow_en)}
+                  </div>
+                  <h3 className="mt-1 text-lg font-bold text-white">
+                    {t(p.title_ar, p.title_en)}
+                  </h3>
+                </div>
+
+                {/* Hover-Reveal Overlay */}
+                <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col justify-end p-5 bg-gradient-to-t from-[#060a1e] via-[#070d28]/95 to-transparent backdrop-blur-md border-t border-cyan-400/25 opacity-0 translate-y-6 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+                    {t(p.eyebrow_ar, p.eyebrow_en)}
+                  </div>
+                  <h3 className="mt-1 text-lg font-bold text-white transition-colors group-hover:text-cyan-200">
+                    {t(p.title_ar, p.title_en)}
+                  </h3>
+                  <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-300">
+                    {t(p.summary_ar, p.summary_en)}
+                  </p>
+
+                  <div className="mt-3 flex flex-wrap gap-1">
+                    {p.technologies.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[9px] font-medium text-slate-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
 
-                  <div className="mt-5 border-t border-white/[0.06] pt-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex flex-wrap gap-1.5">
-                        {p.technologies.slice(0, 2).map((tech) => (
-                          <span
-                            key={tech}
-                            className="rounded-md border border-white/[0.06] bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-slate-300"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-cyan-300 transition-all duration-200 group-hover:translate-x-1">
-                        <span>{t("التفاصيل", "Details")}</span>
-                        <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                      </span>
-                    </div>
+                  <div className="mt-3.5 flex items-center justify-between border-t border-white/[0.08] pt-2.5">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-300 transition-colors group-hover:text-cyan-200">
+                      <span>{t("عرض دراسة الحالة", "View case study")}</span>
+                      <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </span>
                   </div>
                 </div>
               </Link>

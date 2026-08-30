@@ -132,11 +132,11 @@ export function HeroSection() {
 
             <motion.div
               animate={{
-                y: [-4, 6, -4],
-                rotate: [2, 1, 2],
+                y: [-3, 4, -3],
+                rotate: [1.5, 0.5, 1.5],
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute right-0 top-0 z-10"
+              className="absolute -right-2 top-1 z-10"
             >
               <Link href="/portfolio/tog-pos" className="project-stage-card relative block group transition-all duration-300 hover:scale-105 hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image
@@ -155,11 +155,11 @@ export function HeroSection() {
 
             <motion.div
               animate={{
-                y: [4, -6, 4],
-                rotate: [-2, -3, -2],
+                y: [3, -4, 3],
+                rotate: [-1.5, -2.5, -1.5],
               }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              className="absolute right-4 bottom-0 z-10"
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute -right-1 top-[145px] z-20"
             >
               <Link href="/portfolio/gear" className="project-stage-card relative block group transition-all duration-300 hover:scale-105 hover:border-violet-400/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image

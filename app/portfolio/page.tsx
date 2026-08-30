@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, useRef } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Monitor, Smartphone, Briefcase, Layers } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Monitor, Smartphone, Briefcase, Layers, ChevronRight, ChevronLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/context/LanguageContext";
 import { INITIAL_PORTFOLIO } from "@/lib/data/initialData";
 import { ProjectVisual } from "@/components/common/ProjectVisual";
-import { PortfolioItem } from "@/lib/data/initialData";
 
 const filterConfig = {
   all: { icon: Layers, label_ar: "الكل", label_en: "All" },
@@ -20,104 +20,70 @@ function getFilterData(id: string) {
   return filterConfig[id as keyof typeof filterConfig] || { icon: Layers, label_ar: id, label_en: id };
 }
 
-const ProjectCard = ({ p, isFeatured, index }: { p: PortfolioItem; isFeatured: boolean; index: number }) => {
-  const { t } = useLanguage();
-  return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.94 }}
-      transition={{ duration: 0.45, delay: index * 0.1, ease: "easeOut" }}
-      className={isFeatured ? "lg:col-span-2" : ""}
-    >
-      <Link
-        href={`/portfolio/${p.slug}`}
-        className={`project-shell accent-${p.accent} group block h-full overflow-hidden rounded-[30px] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_25px_60px_rgba(0,0,0,0.45)]`}
-      >
-        <div className={`${isFeatured ? "grid lg:grid-cols-[.9fr_1.1fr] h-full" : "flex flex-col h-full"}`}>
-          <div
-            className={`${
-              isFeatured
-                ? "order-2 border-t border-white/8 lg:order-1 lg:border-e lg:border-t-0"
-                : "order-2 flex-1"
-            } p-7 md:p-9 flex flex-col justify-center`}
-          >
-            <div className="text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">
-              {t(p.eyebrow_ar, p.eyebrow_en)}
-            </div>
-            <h2 className="mt-3 text-2xl font-bold text-white transition-colors group-hover:text-cyan-200 md:text-3xl">
-              {t(p.title_ar, p.title_en)}
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-400 line-clamp-3">
-              {t(p.summary_ar, p.summary_en)}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {p.technologies.map((x) => (
-                <span
-                  key={x}
-                  className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-slate-300 transition-colors group-hover:bg-white/10"
-                >
-                  {x}
-                </span>
-              ))}
-            </div>
-            <div className="mt-7 flex items-center gap-2 text-xs font-bold text-white transition-colors group-hover:text-codely-cyan mt-auto pt-4">
-              <span>{t("عرض دراسة الحالة", "Case study")}</span>
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </div>
-          </div>
-
-          <div className={`${isFeatured ? "order-1 lg:order-2" : "order-1"} overflow-hidden h-64 lg:h-auto min-h-[250px] relative bg-[#0a0f25]`}>
-            <div className="absolute inset-0 transition-transform duration-500 group-hover:scale-105">
-              <ProjectVisual project={p} compact={!isFeatured} />
-            </div>
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-  );
-};
+const ITEMS_PER_PAGE = 6;
 
 export default function PortfolioPage() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const gridTopRef = useRef<HTMLDivElement | null>(null);
 
-  const allCategories = Array.from(new Set(INITIAL_PORTFOLIO.map((p) => p.category)));
-  // Ensure a specific order: platform, business, mobile, then any others
-  const orderedCategories = (["platform", "business", "mobile"] as const).filter(c => allCategories.includes(c as PortfolioItem["category"]));
-  const otherCategories = allCategories.filter(c => !(["platform", "business", "mobile"] as string[]).includes(c));
-  const finalCategories = [...orderedCategories, ...otherCategories];
+  const filters = ["all", "platform", "business", "mobile"];
 
-  const filters = ["all", ...finalCategories];
+  const filteredProjects = useMemo(() => {
+    if (filter === "all") return INITIAL_PORTFOLIO;
+    return INITIAL_PORTFOLIO.filter((p) => p.category === filter);
+  }, [filter]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredProjects.length / ITEMS_PER_PAGE));
+
+  const paginatedProjects = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredProjects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [filteredProjects, currentPage]);
+
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    if (gridTopRef.current) {
+      gridTopRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
-    <div>
-      <section className="relative overflow-hidden border-b border-white/10 py-20 md:py-28">
-        <div className="grid-bg absolute inset-0 opacity-60" />
+    <div className="min-h-screen">
+      {/* Compact Header Section without huge gaps */}
+      <section className="relative overflow-hidden pt-12 pb-6 md:pt-16 md:pb-8">
+        <div className="grid-bg absolute inset-0 opacity-40" />
         <div className="container-codely relative">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center flex flex-col items-center"
+            transition={{ duration: 0.5 }}
+            className="mx-auto flex max-w-3xl flex-col items-center text-center"
           >
             <div className="eyebrow flex justify-center">
               <span className="glow-dot h-1.5 w-1.5 rounded-full bg-codely-cyan" />
               {t("أعمال Codely", "Codely work")}
             </div>
-            <h1 className="mt-6 text-balance text-3xl font-bold leading-[1.38] text-white sm:text-4xl md:text-5xl lg:text-6xl md:leading-[1.3] lg:leading-[1.26]">
+            <h1 className="mt-4 text-balance text-2xl font-bold leading-normal text-white sm:text-3xl md:text-4xl">
               {t("منتجات حقيقية. وتفاصيل تشغيل واقعية.", "Real products. Real operational detail.")}
             </h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300">
+            <p className="mt-3 max-w-xl text-xs leading-relaxed text-slate-300 md:text-sm">
               {t(
-                "الأعمال هنا تعكس نوعية المنتجات التي نركز عليها: برمجيات تمتلك دورات عمل حقيقية، تعدد في الأدوار، بيانات مترابطة، وحالات خاصة معقدة يجب التعامل معها باحترافية.",
-                "The work here reflects the kind of products we focus on: software with real workflows, multiple roles, connected data and edge cases that need to be handled properly."
+                "الأعمال هنا تعكس نوعية المنتجات التي نركز عليها: برمجيات تمتلك دورات عمل حقيقية وتطبيقات قابلة للتوسع.",
+                "The work here reflects the kind of products we focus on: software with real workflows and scalable architectures."
               )}
             </p>
           </motion.div>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-2.5">
+          {/* Filter Buttons */}
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
             {filters.map((id) => {
               const active = filter === id;
               const data = getFilterData(id);
@@ -125,9 +91,11 @@ export default function PortfolioPage() {
               return (
                 <button
                   key={id}
-                  onClick={() => setFilter(id)}
-                  className={`relative flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition-all duration-300 ${
-                    active ? "text-[#070b1f]" : "text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5"
+                  onClick={() => handleFilterChange(id)}
+                  className={`relative flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold transition-all duration-200 ${
+                    active
+                      ? "text-[#070b1f]"
+                      : "border border-white/[0.06] bg-white/[0.03] text-slate-400 hover:border-white/20 hover:text-white"
                   }`}
                 >
                   {active && (
@@ -137,7 +105,7 @@ export default function PortfolioPage() {
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
-                  <Icon className={`relative z-10 h-4 w-4 ${active ? "text-[#070b1f]" : "text-slate-400"}`} />
+                  <Icon className={`relative z-10 h-3.5 w-3.5 ${active ? "text-[#070b1f]" : "text-slate-400"}`} />
                   <span className="relative z-10">{t(data.label_ar, data.label_en)}</span>
                 </button>
               );
@@ -146,70 +114,135 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="section-space min-h-[60vh]">
+      {/* Projects Grid Section */}
+      <section ref={gridTopRef} className="pt-2 pb-20">
         <div className="container-codely">
           <AnimatePresence mode="wait">
-            {filter === "all" ? (
-              <motion.div
-                key="all-view"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="space-y-24"
-              >
-                {finalCategories.map((cat, catIndex) => {
-                  const catProjects = INITIAL_PORTFOLIO.filter((p) => p.category === cat);
-                  if (catProjects.length === 0) return null;
-                  const catInfo = getFilterData(cat);
-                  const CatIcon = catInfo.icon;
-                  
-                  return (
-                    <motion.div 
-                      key={cat} 
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: catIndex * 0.15 }}
-                      className="space-y-8"
-                    >
-                      <div className="flex items-center gap-4 border-b border-white/10 pb-5">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 text-white shadow-lg">
-                          <CatIcon className="h-6 w-6" />
-                        </div>
-                        <h2 className="text-3xl font-bold text-white">{t(catInfo.label_ar, catInfo.label_en)}</h2>
+            <motion.div
+              key={`${filter}-page-${currentPage}`}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4 }}
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {paginatedProjects.map((p, index) => (
+                <motion.div
+                  key={p.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                >
+                  <Link
+                    href={`/portfolio/${p.slug}`}
+                    className="group relative block h-[310px] w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070b1e] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(46,220,255,0.18)]"
+                  >
+                    {/* Project Image Background - Full Bleed */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      {p.coverImage ? (
+                        <Image
+                          src={p.coverImage}
+                          alt={p.title_en}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+                        />
+                      ) : (
+                        <ProjectVisual project={p} compact />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#060a1d] via-[#060a1d]/40 to-transparent opacity-85 transition-opacity duration-300 group-hover:opacity-95" />
+                    </div>
+
+                    {/* Permanent Top Category Badge */}
+                    <div className="absolute top-3.5 end-3.5 z-10 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-[10px] font-semibold text-cyan-200 backdrop-blur-md transition-all duration-300 group-hover:border-cyan-400/40">
+                      {p.category === "platform" ? t("منصة ويب", "Web Platform") : p.category === "business" ? t("نظام أعمال", "Business System") : t("تطبيق جوال", "Mobile App")}
+                    </div>
+
+                    {/* Always visible minimal title strip at bottom */}
+                    <div className="absolute inset-x-0 bottom-0 z-10 p-4 transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
+                      <div className="text-[10px] font-bold text-cyan-300/80">
+                        {t(p.eyebrow_ar, p.eyebrow_en)}
                       </div>
-                      <div className="grid gap-7 lg:grid-cols-2">
-                        {catProjects.map((p, i) => (
-                          <ProjectCard 
-                            key={p.slug} 
-                            p={p} 
-                            isFeatured={i === 0 && catProjects.length >= 3} 
-                            index={i} 
-                          />
+                      <h3 className="mt-1 text-lg font-bold text-white">
+                        {t(p.title_ar, p.title_en)}
+                      </h3>
+                    </div>
+
+                    {/* Hover-Reveal Full Info Overlay - CodeNest Style */}
+                    <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col justify-end p-5 bg-gradient-to-t from-[#060a1e] via-[#070d28]/95 to-transparent backdrop-blur-md border-t border-cyan-400/25 opacity-0 translate-y-6 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+                        {t(p.eyebrow_ar, p.eyebrow_en)}
+                      </div>
+                      <h3 className="mt-1 text-lg font-bold text-white transition-colors group-hover:text-cyan-200">
+                        {t(p.title_ar, p.title_en)}
+                      </h3>
+                      <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-300">
+                        {t(p.summary_ar, p.summary_en)}
+                      </p>
+
+                      <div className="mt-3 flex flex-wrap gap-1">
+                        {p.technologies.slice(0, 3).map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[9px] font-medium text-slate-300"
+                          >
+                            {tech}
+                          </span>
                         ))}
                       </div>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            ) : (
-              <motion.div
-                key={`filter-${filter}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="grid gap-7 lg:grid-cols-2"
-              >
-                {INITIAL_PORTFOLIO.filter((p) => p.category === filter).map((p, i) => (
-                  <ProjectCard 
-                    key={p.slug} 
-                    p={p} 
-                    isFeatured={i === 0} 
-                    index={i} 
-                  />
-                ))}
-              </motion.div>
-            )}
+
+                      <div className="mt-3.5 flex items-center justify-between border-t border-white/[0.08] pt-2.5">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-300 transition-colors group-hover:text-cyan-200">
+                          <span>{t("عرض دراسة الحالة", "View case study")}</span>
+                          <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
           </AnimatePresence>
+
+          {/* Pagination Controls - CodeNest Style */}
+          {totalPages > 1 && (
+            <div className="mt-12 flex items-center justify-center gap-2">
+              {/* Previous Page Button */}
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                aria-label="Previous Page"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-400 transition hover:border-cyan-400/40 hover:text-white disabled:pointer-events-none disabled:opacity-30"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+
+              {/* Page Number Circles */}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                <button
+                  key={pageNum}
+                  onClick={() => handlePageChange(pageNum)}
+                  className={`flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold transition-all duration-200 ${
+                    currentPage === pageNum
+                      ? "scale-105 bg-gradient-to-r from-cyan-400 to-blue-500 font-extrabold text-[#070b1f] shadow-[0_0_20px_rgba(46,220,255,0.4)]"
+                      : "border border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20 hover:text-white"
+                  }`}
+                >
+                  {pageNum}
+                </button>
+              ))}
+
+              {/* Next Page Button */}
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                aria-label="Next Page"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-400 transition hover:border-cyan-400/40 hover:text-white disabled:pointer-events-none disabled:opacity-30"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>
