@@ -32,8 +32,9 @@ export function ServicesOverview() {
   return (
     <section className="section-space">
       <div className="container-codely">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="flex flex-col items-center text-center">
           <SectionHeading
+            align="center"
             eyebrow={t("أعمال مختارة", "Selected work")}
             title={t("مشاريع مختلفة. نفس التركيز على التشغيل.", "Different products. The same focus on how they work.")}
             body={t(
@@ -41,13 +42,6 @@ export function ServicesOverview() {
               "We do not showcase pretty screens alone; every product starts from a real workflow or user problem."
             )}
           />
-          <Link
-            href="/portfolio"
-            className="group shrink-0 inline-flex items-center gap-1.5 text-sm font-extrabold text-white transition-colors hover:text-codely-cyan"
-          >
-            <span>{t("كل المشاريع", "All projects")}</span>
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </Link>
         </div>
 
         <motion.div
@@ -94,6 +88,13 @@ export function ServicesOverview() {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="mt-12 flex justify-center">
+          <Link href="/portfolio" className="button-secondary group shadow-none">
+            {t("استكشف كل المشاريع", "Explore all projects")}
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </Link>
+        </div>
       </div>
     </section>
   );

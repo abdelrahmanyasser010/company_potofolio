@@ -44,13 +44,15 @@ export function IntroServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center"
         >
           <SectionHeading
+            align="center"
             eyebrow={t("قدرات الفريق", "Team capabilities")}
             title={t("من واجهة المستخدم إلى منطق التشغيل والـ Backend.", "From the interface to business logic and backend.")}
             body={t(
-              "نغطي تخصصات المنتج الأساسية داخل فريق واحد، ونكوّن التشكيل المناسب حسب مرحلة المشروع وحجمه بدل تحميله Stack أو فريقًا أكبر من احتياجه.",
-              "We cover the core product disciplines in one team and shape the right setup around product stage and scope — without forcing an oversized stack or team."
+              "نغطي تخصصات المنتج الأساسية داخل فريق واحد. ونكون التشكيل المناسب حسب مرحلة المشروع وحجمه بدل تحميله Stack أو فريقاً أكبر من احتياجه.",
+              "We cover the core product disciplines within one team. We shape the team based on your product stage and size, rather than forcing an oversized stack or team."
             )}
           />
         </motion.div>
