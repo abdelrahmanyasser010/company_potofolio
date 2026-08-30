@@ -83,12 +83,13 @@ export function Navbar() {
           >
             <Globe2 className="h-4 w-4 text-codely-cyan" /> {lang === "ar" ? "EN" : "عربي"}
           </button>
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+          <motion.div whileHover={{ scale: 1.025 }} whileTap={{ scale: 0.98 }}>
             <Link
               href="/contact"
-              className="focus-ring inline-flex h-10 items-center gap-2 rounded-full bg-white px-5 text-[13px] font-bold text-[#070b1f] shadow-[0_4px_20px_rgba(255,255,255,.15)] transition hover:shadow-[0_8px_30px_rgba(255,255,255,.25)]"
+              className="focus-ring inline-flex h-10 items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-5 text-xs font-bold text-[#04091a] shadow-[0_4px_18px_rgba(46,220,255,0.3)] transition-all duration-200 hover:shadow-[0_6px_25px_rgba(46,220,255,0.5)]"
             >
-              {t("ابدأ مشروعك", "Start a project")} <ArrowUpRight className="h-4 w-4" />
+              <span>{t("ابدأ مشروعك", "Start a project")}</span>
+              <ArrowUpRight className="h-3.5 w-3.5 rtl:-scale-x-100" />
             </Link>
           </motion.div>
         </div>
@@ -138,7 +139,7 @@ export function Navbar() {
               })}
               <Link
                 href="/contact"
-                className="mt-2 rounded-2xl bg-white px-4 py-3.5 text-center text-sm font-bold text-[#070b1f] shadow-lg"
+                className="mt-2 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-3.5 text-center text-sm font-bold text-[#04091a] shadow-lg"
               >
                 {t("ابدأ مشروعك", "Start a project")}
               </Link>

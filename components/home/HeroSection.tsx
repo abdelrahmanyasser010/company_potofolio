@@ -77,16 +77,17 @@ export function HeroSection() {
             )}
           </motion.p>
 
-          <motion.div variants={itemVariants} className="mt-9 flex flex-wrap gap-3">
+          <motion.div variants={itemVariants} className="mt-9 flex flex-wrap items-center gap-3.5">
             <motion.div whileHover={{ scale: 1.025 }} whileTap={{ scale: 0.98 }}>
-              <Link href="/contact" className="button-primary group shadow-[0_12px_32px_rgba(46,220,255,0.15)]">
-                {t("احكِ لنا عن مشروعك", "Tell us about your project")}
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <Link href="/contact" className="button-primary group">
+                <span>{t("ناقش مشروعك معنا", "Discuss your project with us")}</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100" />
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.025 }} whileTap={{ scale: 0.98 }}>
-              <Link href="/portfolio" className="button-secondary">
-                {t("استكشف أعمالنا المنفذة", "Explore our case studies")}
+              <Link href="/portfolio" className="button-secondary group">
+                <span>{t("استكشف أعمالنا", "Explore our work")}</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100 text-slate-400 group-hover:text-cyan-300" />
               </Link>
             </motion.div>
           </motion.div>

@@ -39,37 +39,37 @@ export function CTASection() {
               )}
             </p>
 
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
+              <motion.div whileHover={{ scale: 1.025 }} whileTap={{ scale: 0.98 }}>
                 <Link
                   href="/contact"
-                  className="button-primary group shadow-[0_12px_35px_rgba(46,220,255,0.2)]"
+                  className="button-primary group"
                 >
-                  <span>{t("ابدأ المحادثة", "Start the conversation")}</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span>{t("ناقش مشروعك معنا", "Discuss your project with us")}</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100" />
                 </Link>
               </motion.div>
 
               {COMPANY_INFO.whatsapp ? (
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                <motion.div whileHover={{ scale: 1.025 }} whileTap={{ scale: 0.98 }}>
                   <a
                     href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="button-whatsapp shadow-[0_12px_35px_rgba(37,211,102,0.15)]"
+                    className="button-whatsapp"
                   >
                     <MessageCircle className="h-4 w-4" />
-                    {t("WhatsApp", "WhatsApp")}
+                    <span>{t("محادثة عبر واتساب", "Chat on WhatsApp")}</span>
                   </a>
                 </motion.div>
               ) : (
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                <motion.div whileHover={{ scale: 1.025 }} whileTap={{ scale: 0.98 }}>
                   <a
                     href={`mailto:${COMPANY_INFO.email}`}
                     className="button-secondary"
                   >
                     <Mail className="h-4 w-4 text-codely-cyan" />
-                    {COMPANY_INFO.email}
+                    <span>{COMPANY_INFO.email}</span>
                   </a>
                 </motion.div>
               )}
