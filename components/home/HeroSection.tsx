@@ -61,16 +61,16 @@ export function HeroSection() {
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="display-title mt-6 max-w-[760px] text-white">
-            {t("نصمّم ونطوّر أنظمة برمجة حقيقية", "We build software that runs the work —")}{" "}
+            {t("نبني برمجيات وأنظمة", "We build software systems —")}{" "}
             <span className="codely-gradient-text">
-              {t("تنمّي أعمالك وتتوسع معك.", "and grows with you.")}
+              {t("تعتمد عليها الشركات.", "that businesses rely on.")}
             </span>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="mt-7 max-w-[680px] text-[15px] leading-8 text-slate-300 md:text-[17px]">
             {t(
-              "فريق هندسي متخصص في بناء منصات الويب، تطبيقات الموبايل، أنظمة POS وERP، ولوحات التحكم المعقدة. نفهم تفاصيل التشغيل اليومي في أسواق السعودية ومصر وعُمان والأردن، ونبني حلاً هندسياً حقيقياً يخدم عملك لا مجرد قالب جاهز.",
-              "A complete software team for web and mobile products, POS and ERP systems, operational dashboards and APIs. Our experience spans Egypt, Saudi Arabia, Oman and Jordan — building around real business needs, not templates."
+              "فريق هندسي متكامل لبناء منصات الويب، تطبيقات الجوال، وأنظمة إدارة الأعمال (ERP & POS). لا نستخدم قوالب جاهزة، بل نكتب كوداً نظيفاً ونبني بنية تحتية قوية تلبي احتياجات التشغيل الفعلية لشركتك.",
+              "A complete engineering team for web platforms, mobile apps, and business systems (ERP & POS). We don't use templates; we write clean code and build solid infrastructure tailored to your actual operational needs."
             )}
           </motion.p>
 

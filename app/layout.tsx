@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Arabic, Inter } from "next/font/google";
+import { Alexandria, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/context/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
 
-const ibmPlex = IBM_Plex_Sans_Arabic({
+const alexandria = Alexandria({
   subsets: ["arabic", "latin"],
-  variable: "--font-ibm",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-ibm", // Keep the same variable name so we don't have to change tailwind.config.ts everywhere
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ar" dir="rtl" className={`${ibmPlex.variable} ${inter.variable}`}>
+    <html lang="ar" dir="rtl" className={`${alexandria.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-codely-ink text-white font-sans antialiased">
         <LanguageProvider>
           <Navbar />
