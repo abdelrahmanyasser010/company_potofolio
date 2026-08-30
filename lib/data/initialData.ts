@@ -184,86 +184,199 @@ export const INITIAL_PORTFOLIO: PortfolioItem[] = [
   },
 
   {
-    slug: "nebu-kids-store",
-    title_ar: "متجر نيبو للأطفال",
-    title_en: "Nebu Kids Store",
-    eyebrow_ar: "متجر إلكتروني فاخر لأزياء الأطفال",
-    eyebrow_en: "Luxury Kids Fashion E-Commerce",
-    category: "platform",
-    summary_ar: "متجر تجارة إلكترونية فاخر متخصص في ملابس وأزياء الأطفال، يتميز بواجهة تفاعلية سريعة، تجربة تسوق ممتعة، وتكامل سلس مع بوابات الدفع والشحن.",
-    summary_en: "A premium e-commerce storefront for kids fashion with rapid interactions, curated shopping experience and seamless checkout.",
-    challenge_ar: "توفير تجربة تسوق سريعة وشيقة للأمهات وأولياء الأمور مع تصنيفات تفصيلية حسب العمر والجنس والمقاس مع بوابات دفع آمنة.",
-    challenge_en: "Delivering an intuitive, fast shopping experience for parents with detailed age, gender, and sizing filters alongside secure checkout.",
-    solution_ar: "بناء منصة متجر متكاملة بتصميم عصري جذاب، وسلة مشتريات ديناميكية ونظام دفع إلكتروني آمن مع لوحة تحكم لإدارة المنتجات والطلبات.",
-    solution_en: "Built a modern e-commerce web platform with dynamic cart flows, integrated payment gateways, and a full dashboard for inventory and orders.",
-    highlights_ar: ["متجر سريع ومتجاوب", "تصفية متقدمة للمقاسات والأعمار", "سلة مشتريات ودفع سريع", "لوحة تحكم لإدارة المخزون"],
-    highlights_en: ["High-speed responsive store", "Smart age & sizing filters", "Streamlined checkout", "Inventory management"],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Payment API", "Responsive UI"],
-    accent: "violet",
-    visual: "pos",
-    coverImage: "https://codenest-eg.com/front-style/imgWeb/EzEboSBdWTBnbW0keJTy.webp",
-    website: "https://www.nebukids.com",
-  },
-  {
-    slug: "roya-real-estate",
-    title_ar: "رويا للعقارات",
-    title_en: "Roya Real Estate",
-    eyebrow_ar: "منصة عرض وحجز المشاريع العقارية",
-    eyebrow_en: "Modern Real Estate & Booking Platform",
-    category: "platform",
-    summary_ar: "منصة عقارية حديثة تتيح للمستخدمين استكشاف وتصفح المشاريع السكنية والتجارية، مع خرائط تفاعلية، جولات افتراضية، ونظام حجز واستفسار فوري.",
-    summary_en: "A comprehensive real estate portal for exploring residential and commercial projects with interactive maps and direct booking.",
-    challenge_ar: "تنظيم بيانات المشاريع العقارية الكبيرة مع تفاصيل الوحدات، المساحات، الأسعار، وموقع كل مشروع على الخريطة بشكل جذاب وسلس.",
-    challenge_en: "Structuring massive real estate project data with unit specs, floor plans, pricing and interactive location mapping.",
-    solution_ar: "تطوير منصة تصفح عقارية سريعة بفلاتر بحث متقدمة، عروض مصورة عالية الدقة، ولوحة مخصصة لإدارة استفسارات المشترين ومتابعة المبيعات.",
-    solution_en: "Built a high-performance portal with smart property filters, interactive maps, and lead management workflows.",
-    highlights_ar: ["كتالوج مشاريع عقارية", "خرائط تفاعلية", "فلاتر بحث حسب الموقع والميزانية", "نظام تواصل وحجز مباشر"],
-    highlights_en: ["Property project catalog", "Interactive maps", "Budget & location filters", "Direct lead capture"],
-    technologies: ["React", "Next.js", "Interactive Maps", "Node.js", "Tailwind CSS"],
-    accent: "cyan",
-    visual: "pos",
-    coverImage: "https://codenest-eg.com/front-style/work/roya.webp",
-    website: "https://roya-eg.site/",
-  },
-  {
     slug: "dion-derma",
     title_ar: "ديون ديرما",
     title_en: "Dion Derma",
-    eyebrow_ar: "متجر مستحضرات التجميل والعناية بالبشرة",
-    eyebrow_en: "Cosmetics & Skincare Store",
+    eyebrow_ar: "متجر إلكتروني متقدم لمستحضرات التجميل والعناية بالبشرة",
+    eyebrow_en: "Advanced Cosmetics & Skincare Platform",
     category: "platform",
-    summary_ar: "متجر إلكتروني متقدم لمنتجات العناية بالبشرة والتجميل، يوفر تجربة تسوق طبية موثوقة مع تصنيفات طبية دقيقة وتوصيل سريع.",
-    summary_en: "An advanced cosmetics and skincare e-commerce platform offering tailored recommendations and seamless ordering.",
-    challenge_ar: "بناء واجهة تعكس الثقة الطبية والجمالية مع إمكانية عرض تفاصيل المكونات والطريقة الصحيحة للاستخدام.",
-    challenge_en: "Creating a trustworthy dermatological shopping interface detailing ingredients and skincare regimens.",
-    solution_ar: "تصميم وتطوير متجر عالي الأداء مع نظام تصفية حسب نوع البشرة والمشكلة، وبوابات دفع إلكتروني متعددة.",
-    solution_en: "Engineered a high-speed storefront with skin-type filtering, product routine guides, and secure payment processing.",
-    highlights_ar: ["تصنيف حسب نوع البشرة", "عرض المكونات وطريقة الاستخدام", "تجربة دفع موثوقة", "إدارة الطلبات والتوصيل"],
-    highlights_en: ["Skin-type filters", "Usage & routine guides", "Secure payments", "Order tracking"],
-    technologies: ["Next.js", "Tailwind CSS", "E-Commerce", "REST APIs"],
-    accent: "teal",
+    summary_ar: "منصة تجارة إلكترونية متطورة لمنتجات التجميل والعناية بالبشرة، تجمع بين الموثوقية السريرية وتجربة التسوق الفاخرة مع سرعة استجابة فائقة وتحديث لحظي لسلة الشراء.",
+    summary_en: "A cutting-edge skincare and cosmetics e-commerce platform combining clinical trust with luxury UX, real-time cart interactions, and swift checkout.",
+    challenge_ar: "كان التحدي يتمثل في إنشاء واجهة متجر رقمية تعكس كلاً من الموثوقية السريرية والجمال الفاخر، مع التعامل مع سمات المنتجات المعقدة (نوع البشرة، المكونات، الاستخدام) وتوفير تجربة تصفح سريعة كالبرق عبر جميع الأجهزة خصوصاً الهواتف المحمولة.",
+    challenge_en: "The challenge was to create a digital storefront reflecting clinical trustworthiness and luxury aesthetics, handling complex product attributes (skin type, active ingredients, regimens) with lightning-fast mobile responsiveness.",
+    solution_ar: "باستخدام Laravel و Next.js و Blade، قمنا ببناء محرك تجارة إلكترونية محسّن للغاية، مع دمج تقنية Ajax لتصفية المنتجات وتحديثات سلة التسوق في الوقت الفعلي لضمان تفاعل خالي من التأخير، ولوحة تحكم مخصصة لفريق ديون ديرما لإدارة المخزون والطلبات آلياً.",
+    solution_en: "Engineered an optimized e-commerce engine with real-time cart updates, smart dermatological filtering, and a bespoke dashboard for inventory management and automated order tracking.",
+    highlights_ar: [
+      "تصفية متطورة حسب نوع البشرة والمكونات الفعالة",
+      "تحديث فوري لسلة التسوق بدون إعادة تحميل الصفحة",
+      "بوابات دفع إلكتروني متعددة وآمنة",
+      "لوحة إدارة شاملة للمنتجات والطلبات والمخزون"
+    ],
+    highlights_en: [
+      "Smart filtering by skin type & active ingredients",
+      "Zero-lag real-time shopping cart",
+      "Multi-gateway secure payment checkout",
+      "Comprehensive order & inventory management dashboard"
+    ],
+    technologies: ["Laravel", "Next.js", "Ajax Engine", "Tailwind CSS", "REST APIs"],
+    accent: "cyan",
     visual: "pos",
     coverImage: "https://codenest-eg.com/front-style/work/GpMUdJC8m3nNNVpCYiKv.webp",
+    website: "https://midnightblue-woodpecker-805076.hostingersite.com/ar/shop",
+    galleryTitle_ar: "واجهات وتجربة متجر ديون ديرما",
+    galleryTitle_en: "Dion Derma Store Experience",
+    galleryIntro_ar: "استعراض الواجهات وعروض المنتجات وتجربة التسوق السلسة في متجر ديون ديرما.",
+    galleryIntro_en: "Showcase of store interfaces, product banners, and streamlined shopping experience.",
+    gallery: [
+      {
+        src: "https://codenest-eg.com/front-style/work/GpMUdJC8m3nNNVpCYiKv.webp",
+        title_ar: "الواجهة الرئيسية للمتجر",
+        title_en: "Storefront Homepage",
+        caption_ar: "تصميم فخم يعكس الهوية الطبية والتجميلية للعلامة مع إبراز المنتجات الأكثر طلباً.",
+        caption_en: "Luxury storefront design reflecting clinical trust and highlighting top products."
+      },
+      {
+        src: "https://midnightblue-woodpecker-805076.hostingersite.com/front-style/imgOffer/4gN3GCCF8hB8gEroJFnh.webp",
+        title_ar: "عروض وباقات العناية بالبشرة",
+        title_en: "Skincare Offers & Bundles",
+        caption_ar: "قسم ديناميكي لعرض باقات العناية المتكاملة مع فلاتر حسب المشاكل الجلدية.",
+        caption_en: "Dynamic section for complete skincare routine packages."
+      },
+      {
+        src: "https://midnightblue-woodpecker-805076.hostingersite.com/front-style/imgOffer/VVGr52qHd6rlWu2ShLb9.webp",
+        title_ar: "كتالوج المنتجات والتركيبات العلاجية",
+        title_en: "Product Catalog & Formulations",
+        caption_ar: "عرض مفصل للمنتجات مع شرح المكونات وطريقة الاستخدام الموصى بها طبياً.",
+        caption_en: "Detailed product breakdown showcasing ingredients and usage guidelines."
+      },
+      {
+        src: "https://midnightblue-woodpecker-805076.hostingersite.com/front-style/imgWeb/r1.webp",
+        title_ar: "تجربة التصفح والشراء السريع",
+        title_en: "Seamless Browsing & Cart Flow",
+        caption_ar: "سلة مشتريات فورية وتجربة دفع في خطوة واحدة دون تعقيد.",
+        caption_en: "Instant shopping cart and simplified one-step checkout."
+      }
+    ]
   },
   {
-    slug: "hamel-almisk",
-    title_ar: "حامل المسك للعطور",
-    title_en: "Hamel Almisk Perfumes",
-    eyebrow_ar: "متجر إلكتروني فاخر للعطور والزيوت العطرية",
-    eyebrow_en: "Luxury Perfumes & Fragrances Store",
-    category: "platform",
-    summary_ar: "متجر عطور فاخر يقدم تجربة حسية وبصرية تعكس هوية العلامة التجارية وأناقة المنتجات، مع خيارات هدايا وتغليف مخصص ودفع إلكتروني آمن.",
-    summary_en: "A luxury perfume and fragrance storefront delivering a sensory brand experience with custom gifting and swift delivery.",
-    challenge_ar: "نقل الهوية الفاخرة للعطور عبر الإنترنت وتقديم تفاصيل النوتات العطرية والمكونات بأسلوب أنيق ومشجع على الشراء.",
-    challenge_en: "Translating a luxury fragrance brand into a digital shopping experience highlighting top, middle, and base notes.",
-    solution_ar: "بناء واجهة فاخرة بألوان دافئة ومظلمة تبرز زجاجات العطور، مع نظام طلب هدايا متكامل ودفع إلكتروني فوري.",
-    solution_en: "Designed and developed an atmospheric luxury storefront with gift-packaging flows and secure checkout.",
-    highlights_ar: ["عرض نوتات العطور والمكونات", "خيارات تغليف الهدايا", "تجربة تصفح فاخرة", "بوابات دفع وشحن سريع"],
-    highlights_en: ["Fragrance notes breakdown", "Luxury gift options", "Fast checkout", "Mobile responsive"],
-    technologies: ["Next.js", "Tailwind CSS", "Brand Experience", "E-Commerce"],
-    accent: "amber",
+    slug: "jahez-erp",
+    title_ar: "نظام ERP جاهز",
+    title_en: "Jahez ERP System",
+    eyebrow_ar: "نظام تخطيط موارد المؤسسات لقطاعات التجزئة والخدمات",
+    eyebrow_en: "Enterprise ERP & POS Accounting System",
+    category: "business",
+    summary_ar: "نظام محاسبي وإداري متكامل للشركات والمؤسسات يدعم الفواتير الإلكترونية المعتمدة، إدارة المستودعات، نقاط البيع السحابية، والتقارير المالية والضريبية بدقة متناهية.",
+    summary_en: "A robust enterprise ERP system powering multi-branch accounting, Zatca electronic invoicing, warehouse management, and real-time financial reporting.",
+    challenge_ar: "بناء نظام محاسبي سحابي فائق الاستقرار يدعم الفواتير الإلكترونية المعتمدة ومتعدد الفروع والشركات بذكاء، مع ضمان حماية استثنائية وسلامة للبيانات والعمليات المالية الضخمة.",
+    challenge_en: "Architecting a multi-tenant cloud ERP handling accredited e-invoicing, distributed branch synchronization, and large-scale transactional integrity without failure.",
+    solution_ar: "صممنا قاعدة بيانات متقدمة تدعم التراجع الآمن عن المعاملات وحواجز تحقق صارمة، مع نظام POS للويب تم بناؤه لتنفيذ عمليات الدفع السريع الكثيفة وتتبع المخزون اللحظي وإصدار الإقرارات الضريبية بضغطة زر.",
+    solution_en: "Engineered high-throughput ACID database architecture with fail-safe rollback mechanisms, rapid web POS engine, automated tax reporting, and live multi-warehouse sync.",
+    highlights_ar: [
+      "دعم كامل للفاتورة الإلكترونية والربط المعتمد",
+      "إدارة متعددة الفروع والشركات والمستودعات",
+      "نقاط بيع سحابية POS فائقة السرعة",
+      "تقارير مالية وتحليلات أرباح تفاعلية لحظية"
+    ],
+    highlights_en: [
+      "Accredited compliant e-invoicing integration",
+      "Multi-branch, multi-company & warehouse management",
+      "High-speed cloud POS terminals",
+      "Real-time dynamic financial analytics & P&L reports"
+    ],
+    technologies: ["Node.js", "PostgreSQL", "React", "Next.js", "Docker", "Tailwind CSS"],
+    accent: "violet",
     visual: "pos",
-    coverImage: "https://codenest-eg.com/front-style/work/hamel-almisk.webp",
+    coverImage: "https://codenest-eg.com/front-style/work/jahez.webp",
+    website: "https://jahezedu.com",
+    galleryTitle_ar: "شاشات ووحدات نظام جاهز ERP",
+    galleryTitle_en: "Jahez ERP Modules & Workflows",
+    galleryIntro_ar: "استعراض لوحات التحكم المحاسبية، إدارة الفواتير، ونقاط البيع داخل النظام.",
+    galleryIntro_en: "Comprehensive views of accounting dashboards, e-invoicing modules, and POS cash flows.",
+    gallery: [
+      {
+        src: "https://codenest-eg.com/front-style/work/jahez.webp",
+        title_ar: "الواجهة الرئيسية ونظرة عامة على النظام",
+        title_en: "Main System Dashboard",
+        caption_ar: "لوحة مؤشرات رئيسية تعرض الإيرادات اليومية والمبيعات وأداء الفروع بوضوح.",
+        caption_en: "Executive dashboard displaying daily revenue, branch sales, and cash flow."
+      },
+      {
+        src: "https://codenest-eg.com/front-style/imgWeb/F1N7AjCuSLgkGnTHES4n.webp",
+        title_ar: "إدارة العمليات المحاسبية والقيود",
+        title_en: "Financial Ledger & Entries",
+        caption_ar: "شجرة الحسابات والقيود اليومية التلقائية وموازين المراجعة.",
+        caption_en: "Automated journal entries, general ledger, and trial balance reports."
+      },
+      {
+        src: "https://codenest-eg.com/front-style/imgWeb/uTy3OdAOZvQXfi4CJgQ4.webp",
+        title_ar: "وحدة الفواتير الإلكترونية المعتمدة",
+        title_en: "E-Invoicing Management",
+        caption_ar: "إصدار وإرسال الفواتير الضريبية المبسطة مع رمز الاستجابة السريع QR.",
+        caption_en: "Instant tax invoice issuance with compliant cryptographic QR codes."
+      },
+      {
+        src: "https://codenest-eg.com/front-style/imgWeb/37DqJAu86d0VtTZL32ZS.webp",
+        title_ar: "إدارة المخزون والمستودعات المتعددة",
+        title_en: "Multi-Warehouse Inventory",
+        caption_ar: "تتبع حركة الأصناف وجرد البضائع وتنبيهات وصول حد الطلب الأدنى.",
+        caption_en: "Item stock tracking, warehouse transfers, and low-inventory triggers."
+      },
+      {
+        src: "https://codenest-eg.com/front-style/imgWeb/cjqwuHY1uEgZk6n3jHGF.webp",
+        title_ar: "نظام نقاط البيع السحابية (POS)",
+        title_en: "Cloud POS Interface",
+        caption_ar: "شاشة بيع سريعة تدعم قارئات الباركود وطابعات الإيصالات الحرارية.",
+        caption_en: "Fast checkout screen tailored for barcode scanners and thermal printers."
+      },
+      {
+        src: "https://codenest-eg.com/front-style/imgWeb/npqo75uNL30LDJ4b289Q.webp",
+        title_ar: "إدارة الموردين والعملاء والذمم",
+        title_en: "CRM & Accounts Receivable",
+        caption_ar: "كشوف حسابات تفصيلية ومتابعة آجال السداد والمدفوعات.",
+        caption_en: "Detailed account statements, payment schedules, and aging reports."
+      },
+      {
+        src: "https://codenest-eg.com/front-style/imgWeb/3lgLaR7J32kVsoQKBAdO.webp",
+        title_ar: "التقارير التحليلية والضريبية",
+        title_en: "Tax & Analytics Reports",
+        caption_ar: "حساب إقرار ضريبة القيمة المضافة ومؤشرات الربحية لكل قسم.",
+        caption_en: "Automated VAT return calculations and departmental profitability metrics."
+      }
+    ]
+  },
+  {
+    slug: "innobridge",
+    title_ar: "إينوبريدج (Innobridge)",
+    title_en: "Innobridge",
+    eyebrow_ar: "الاستشارات الاستراتيجية العالمية والتحول الرقمي",
+    eyebrow_en: "Strategic Consulting & Digital Transformation",
+    category: "platform",
+    summary_ar: "منصة استشارية مؤسسية عالمية تجمع الخدمات الاستراتيجية وقصص النجاح الدولية للشركة في تجربة تفاعلية ثنائية اللغة مع لوحة قياس الأثر الرقمي.",
+    summary_en: "An enterprise consulting platform consolidating global advisory services and impact metrics into a bilingual modular experience.",
+    challenge_ar: "كانت إينوبريدج بحاجة إلى توحيد مجموعتها الواسعة من الخدمات الاستشارية وقصص النجاح العالمية في منصة رقمية موحدة يمكن الوصول إليها، وتقديم المفاهيم المعقدة (مثل التكامل الذكي والتخطيط الاستراتيجي) بتنسيق جذاب وسهل الهضم.",
+    challenge_en: "Innobridge needed to unify its wide array of strategic services and international success stories into an accessible portal, communicating complex concepts with clarity.",
+    solution_ar: "قمنا بتطوير موقع ويب مؤسسي عالي الأداء بنظام تصميم نمطي (Modular)، مع لوحة معلومات تفاعلية 'التأثير بالأرقام'، وتقديم محتوى مترجم بالكامل (عربي/إنجليزي) مع سرعة تحميل فائقة وتوافق كامل لمحركات البحث العالمية.",
+    solution_en: "Engineered a modular corporate platform featuring interactive impact metrics, complete bilingual localization, and SEO performance optimization.",
+    highlights_ar: [
+      "لوحة معلومات تفاعلية لمؤشرات التأثير بالأرقام",
+      "دعم كامل للغتين العربية والإنجليزية",
+      "بنية برمجية معيارية سريعة التحميل",
+      "أعلى معايير تحسين محركات البحث العالمية"
+    ],
+    highlights_en: [
+      "Interactive impact metrics dashboard",
+      "Full Arabic & English bilingual support",
+      "High-performance modular architecture",
+      "Global SEO & accessibility compliance"
+    ],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Modular UI", "i18n Engine"],
+    accent: "blue",
+    visual: "education",
+    coverImage: "https://codenest-eg.com/front-style/work/inno.webp",
+    website: "https://innobridge.net/",
+    galleryTitle_ar: "استعراض منصة إينوبريدج المؤسسية",
+    galleryTitle_en: "Innobridge Corporate Platform Views",
+    galleryIntro_ar: "نظرة على واجهات المنصة، صفحات الخدمات الاستشارية، ولوحة قياس الأثر الرقمي.",
+    galleryIntro_en: "A look at the platform interfaces, consulting service modules, and impact metric dashboards.",
+    gallery: [
+      {
+        src: "https://codenest-eg.com/front-style/work/inno.webp",
+        title_ar: "الواجهة الرئيسية للمنصة",
+        title_en: "Platform Homepage",
+        caption_ar: "تصميم مؤسسي رفيع المستوى يقدم هوية إينوبريدج العالمية ومجالات الاستشارات الرئيسية.",
+        caption_en: "High-level enterprise design presenting global consulting capabilities."
+      }
+    ]
   },
 
   {

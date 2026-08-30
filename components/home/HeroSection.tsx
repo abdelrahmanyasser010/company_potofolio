@@ -159,7 +159,7 @@ export function HeroSection() {
                 rotate: [-1.5, -2.5, -1.5],
               }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute -right-1 top-[145px] z-20"
+              className="absolute -right-1 top-[195px] z-20"
             >
               <Link href="/portfolio/gear" className="project-stage-card relative block group transition-all duration-300 hover:scale-105 hover:border-violet-400/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <Image

@@ -62,7 +62,7 @@ export function ServicesOverview() {
             >
               <Link
                 href={`/portfolio/${p.slug}`}
-                className="group relative block h-[310px] w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070b1e] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(46,220,255,0.18)]"
+                className="group relative block aspect-[1.5/1] w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070b1e] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-1.5 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(46,220,255,0.18)]"
               >
                 {/* Full Bleed Image */}
                 <div className="absolute inset-0 overflow-hidden">
@@ -81,44 +81,27 @@ export function ServicesOverview() {
                 </div>
 
                 {/* Permanent Category Badge */}
-                <div className="absolute top-3.5 end-3.5 z-10 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-[10px] font-semibold text-cyan-200 backdrop-blur-md transition-all duration-300 group-hover:border-cyan-400/40">
+                <div className="absolute top-3 end-3 z-10 rounded-full border border-white/15 bg-black/60 px-2.5 py-0.5 text-[10px] font-semibold text-cyan-200 backdrop-blur-md transition-all duration-300 group-hover:border-cyan-400/40">
                   {p.category === "platform" ? t("منصة ويب", "Web Platform") : p.category === "business" ? t("نظام أعمال", "Business System") : t("تطبيق جوال", "Mobile App")}
                 </div>
 
                 {/* Default Title Strip at Bottom */}
-                <div className="absolute inset-x-0 bottom-0 z-10 p-4 transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
-                  <div className="text-[10px] font-bold text-cyan-300/80">
-                    {t(p.eyebrow_ar, p.eyebrow_en)}
-                  </div>
-                  <h3 className="mt-1 text-lg font-bold text-white">
+                <div className="absolute inset-x-0 bottom-0 z-10 p-3.5 transition-all duration-300 group-hover:opacity-0 group-hover:pointer-events-none">
+                  <h3 className="text-sm sm:text-base font-bold text-white">
                     {t(p.title_ar, p.title_en)}
                   </h3>
                 </div>
 
-                {/* Hover-Reveal Overlay */}
-                <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col justify-end p-5 bg-gradient-to-t from-[#060a1e] via-[#070d28]/95 to-transparent backdrop-blur-md border-t border-cyan-400/25 opacity-0 translate-y-6 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+                {/* Hover-Reveal Minimal Overlay */}
+                <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col justify-end p-4 bg-gradient-to-t from-[#060a1e] via-[#070d28]/95 to-transparent backdrop-blur-md border-t border-cyan-400/25 opacity-0 translate-y-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+                  <div className="text-[10px] font-bold text-cyan-300">
                     {t(p.eyebrow_ar, p.eyebrow_en)}
                   </div>
-                  <h3 className="mt-1 text-lg font-bold text-white transition-colors group-hover:text-cyan-200">
+                  <h3 className="mt-1 text-sm sm:text-base font-bold text-white transition-colors group-hover:text-cyan-200">
                     {t(p.title_ar, p.title_en)}
                   </h3>
-                  <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-300">
-                    {t(p.summary_ar, p.summary_en)}
-                  </p>
 
-                  <div className="mt-3 flex flex-wrap gap-1">
-                    {p.technologies.slice(0, 3).map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[9px] font-medium text-slate-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-3.5 flex items-center justify-between border-t border-white/[0.08] pt-2.5">
+                  <div className="mt-2.5 flex items-center justify-between border-t border-white/[0.08] pt-2">
                     <span className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-300 transition-colors group-hover:text-cyan-200">
                       <span>{t("عرض دراسة الحالة", "View case study")}</span>
                       <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
